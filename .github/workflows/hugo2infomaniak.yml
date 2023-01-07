@@ -28,7 +28,7 @@ jobs:
         run: ls public
 
       - name: SFTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.1.2
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USER }}
