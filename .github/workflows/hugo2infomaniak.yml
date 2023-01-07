@@ -27,9 +27,6 @@ jobs:
       - name: List output files
         run: ls public
 
-      - name: reset package-lock.json
-        run: git checkout package-lock.json
-
       - name: SFTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@3.1.2
         with:
