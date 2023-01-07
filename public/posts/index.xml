@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on RDSCP Blog</title>
+    <link>https://blog.glarose.fr/posts/</link>
+    <description>Recent content in Posts on RDSCP Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2022 Gh15L1</copyright>
+    <lastBuildDate>Tue, 30 Nov 2021 23:00:00 +0000</lastBuildDate><atom:link href="https://blog.glarose.fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Une installation d&#39;ArchLinux en moins de 30 minutes, c&#39;est possible !</title>
+      <link>https://blog.glarose.fr/posts/installation-archlinux/</link>
+      <pubDate>Tue, 30 Nov 2021 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/installation-archlinux/</guid>
+      <description>Vous l&amp;rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.
+J&#39;aime ces ambiances. Et prends toi une grosse image à charger au passage.Ceci dit, la photo est assez raccord avec le temps actuel.
+Alors, on va sortir un peu de tout ça et parler tech ! A l&amp;rsquo;occasion, si jamais j&amp;rsquo;ai de l&amp;rsquo;inspiration, j&amp;rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&amp;rsquo;aimerais bien partager.</description>
+      <content>&lt;p&gt;Vous l&amp;rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/michael-mouritz-WXX_DhjlmD4-unsplash.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;J&#39;aime ces ambiances. Et prends toi une grosse image à charger au passage.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Ceci dit, la photo est assez raccord avec le temps actuel.&lt;/p&gt;
+&lt;p&gt;Alors, on va sortir un peu de tout ça et parler tech !
+A l&amp;rsquo;occasion, si jamais j&amp;rsquo;ai de l&amp;rsquo;inspiration, j&amp;rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&amp;rsquo;aimerais bien partager.&lt;/p&gt;
+&lt;p&gt;BREF.&lt;/p&gt;
+&lt;p&gt;Aujourd&amp;rsquo;hui, retour, en quelque sorte, aux sources.&lt;/p&gt;
+&lt;p&gt;Retour sur mon retour sur Archlinux&amp;hellip; 
+Il y a tant de choses à dire sur cet OS, qui attire autant les archifans que les haters.
+Il y a aussi &lt;a href=&#34;https://music.apple.com/fr/album/the-elite/1457603296?i=1457603297&#34;&gt;The Elite&lt;/a&gt; (oui, je mets du hardstyle, parce que je n&amp;rsquo;ai pas peur du mauvais goût) qui vouent à cet OS un culte sans fin, traitant allègrement les autres de gros noobs (si, si, allez faire un tour sur &lt;a href=&#34;https://reddit.com/r/archlinux&#34;&gt;Reddit&lt;/a&gt;). Que voulez-vous, le monde des OS Linux peut tout autant se révéler le merveilleux quand on souhaite l&amp;rsquo;utiliser, mais tout aussi imbécile quand le prosélytisme y est pratiqué.&lt;/p&gt;
+&lt;p&gt;Donc ici, point de critiques sur d&amp;rsquo;autres OS, chacun fait ce qu&amp;rsquo;il veut.&lt;/p&gt;
+&lt;p&gt;Alors, qu&amp;rsquo;est ce qui m&amp;rsquo;a conduit à mettre Arch sur ma machine de boulot ?&lt;/p&gt;
+&lt;p&gt;Je me suis aperçu au fur et à mesure des missions confiés par mon ESN que Linux me serait plus utile que Windows (spoiler : sans blague ?!)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Parenthèse, avant de continuer : je sais que l&amp;rsquo;on dit GNU/Linux et non pas Linux, mais j&amp;rsquo;ai la flemme.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai donc installé tour à tour 2 OS, Ubuntu puis Fedora, et puis j&amp;rsquo;ai fait la moue. 
+Mouais. 
+Ca marche hein, mais ça n&amp;rsquo;est pas bandant. Comme Windows en fait. Et fait étonnant, des bugs ! Rien à voir avec ceux que j&amp;rsquo;ai connu il y a 15 ans, quand j&amp;rsquo;ai commencé à toucher mon 1er Linux (Ubuntu 7.04), mais bordel, la sortie de veille, quand même.
+Côté DM, comme je suis connu pour être original, je suis parti sur GNOME, plus parce que je le connaissais que par choix esthétique. 
+Sauf que j&amp;rsquo;ai remarqué une étange sensation de lourdeur. Il est vrai que GNOME transporte avec lui foultitude de logiciel, et qu&amp;rsquo;il peut devenir pachyderme, avant même de faire quelque chose de sa session. C&amp;rsquo;est autant le cas sur Ubuntu que sur Fedora.&lt;/p&gt;
+&lt;p&gt;Alors, le week-end dernier (je finis de rédiger ce billet Mardi 30 Novembre 2021), il faisait moche, et je me suis souvenu de 2 choses :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ça faisait longtemps que je ne m&amp;rsquo;étais pas pris la tête à installer un truc badass-compliqué.&lt;/li&gt;
+&lt;li&gt;je ne me souviens plus de la 2ème raison.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ca tombe bien, Next Inpact en a fait &lt;a href=&#34;https://www.nextinpact.com/article/49005/installer-simplement-arch-linux-cest-possible&#34;&gt;un article dis donc&lt;/a&gt; ! 
+La mission : tuer Windows pour faire redéclarer ma flamme à Linux.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/la_flamme_5f6a012978534_0.webp&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Je n&#39;ai toujours pas honte, oui j&#39;ai aimé cette série.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Cependant, 7 ans que je ne l&amp;rsquo;avais plus installé cet Arch, rouillé je l&amp;rsquo;étais, mais bizarrement, toujours aussi excité.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;article de NXi nous apprends qu&amp;rsquo;un nouvel outil, &lt;code&gt;archinstall&lt;/code&gt;, est désormais disponible pour simplifier l&amp;rsquo;installation. Le moins que l&amp;rsquo;on puisse dire, c&amp;rsquo;était que j&amp;rsquo;étais loin d&amp;rsquo;imaginer à quel point le mot &amp;ldquo;simple&amp;rdquo; allait être aussi respecté au pied de la lettre. La capacité de cet outil pour installer un système &amp;ldquo;aussi&amp;rdquo; complexe (faut pas déconner, j&amp;rsquo;ai l&amp;rsquo;impression d&amp;rsquo;être un connard d&amp;rsquo;élitiste) tiendrait presque de la magie si je n&amp;rsquo;étais pas informaticien. 
+Sans rire, il m&amp;rsquo;a fallu 10 minutes entre le temps où j&amp;rsquo;ai entré la commande dans l&amp;rsquo;installeur d&amp;rsquo;Arch et le moment où GNOME m&amp;rsquo;a accueilli. 
+C&amp;rsquo;est stupéfiant. C&amp;rsquo;est même plus rapide qu&amp;rsquo;une installation d&amp;rsquo;Ubuntu ou Fedora.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;outil, construit en Python, pose quelques questions, comme le zone temporel, le disque à utiliser et son partitionnement, le type de machine que vous souhaitez avoir entre minimal, server, desktop, et quelques autres questions que je vous laisserai le soin de découvrir (si je n&amp;rsquo;avais pas la flemme, je vous aurai mis quelques captures, veuillez excuser l&amp;rsquo;auteur).
+Et ensuite, y&amp;rsquo;a plus qu&amp;rsquo;à attendre.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/pub-zelda-III.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Parce que j&#39;ai envie.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;10 petites minutes plus tard (qui ne m&amp;rsquo;auront pas fait devenir squelette), on a le droit à l&amp;rsquo;écran de login de GNOME et surtout à un bureau propre et épuré, sans aucun ajout superflu. Bien sûr il manque un tas de choses, mais c&amp;rsquo;est à vous d&amp;rsquo;apporter les paquets, grâce au célèbre &lt;code&gt;pacman&lt;/code&gt;, mais également à &lt;a href=&#34;https://aur.archlinux.org&#34;&gt;AUR`&lt;/a&gt; permettant d&amp;rsquo;obtenir ainsi une bibliothèque quasiment illimité (attention quand même, ce sont des paquets communautaires, ne provenant pas de l&amp;rsquo;équipe derrière Archlinux, à vos chats, risques et périls).&lt;/p&gt;
+&lt;p&gt;On peut se construire un environnement sur-mesure, sans avoir de logiciels ou de dépendances inutiles. Pour ma part, il a été facile de retrouver mes logiciels favoris, dont le Visual Studio Code que j&amp;rsquo;affectionne tant et dans lequel j&amp;rsquo;ai écrit ce billet. 
+Oui, je sais, vous êtes en train de vous étrangler, cet exemple est valable uniquement dans le cadre de ce billet.
+Il est marrant de voir que c&amp;rsquo;est un logiciel Microsoft que j&amp;rsquo;installe en premier sur un Linux. Tout comme Edge d&amp;rsquo;ailleurs. Naaaan, je déconne.&lt;/p&gt;
+&lt;p&gt;En vrai, la situation a vraiment changé en 10 ans, époque à laquelle j&amp;rsquo;animais &lt;a href=&#34;https://enfluxlibre.lepodcast.fr&#34;&gt;une émission sur le logiciel libre&lt;/a&gt;&amp;hellip; Ce temps semble désormais totalement révolu.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/steve-ballmer-microsoft-offers-best-both-worlds-windows-8.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;VF = Coucou Steve ! Version j&#39;en n&#39;ai rien péter = Coucou connard !&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Mais je crois que ce qui m&amp;rsquo;avait tant manqué sous Windows, c&amp;rsquo;est la personnalisation. Je peux avoir un environnement de bureau utilisant les codes de couleur que l&amp;rsquo;on appelle &lt;a href=&#34;https://nordtheme.com&#34;&gt;Nord&lt;/a&gt; permettant d&amp;rsquo;avoir une ambiance sombre et bleuté, très en vogue en ce moment et surtout, agréable à l&amp;rsquo;oeil.&lt;/p&gt;
+&lt;p&gt;Alors, désormais qu&amp;rsquo;Arch est revenu sur une machine chez moi, quel bilan en tirer ?
+Pour le moment, je redécouvre. J&amp;rsquo;aurai plus de recul dans 1 mois, et surtout, un retour complet en utilisation dans le cadre du travail.&lt;/p&gt;
+&lt;p&gt;Je crains, comme il y a 7 ans, les &lt;code&gt;pacman -Syu&lt;/code&gt; qui casserait tout le système, mais je suis bien moins casse-cou qu&amp;rsquo;à l&amp;rsquo;époque. Surtout, je remarque que l&amp;rsquo;envie d&amp;rsquo;aller voir ailleurs se fait moins en moins pressant. Le distro-hopping que je ne fais plus depuis des années y joue pour beaucoup. La volonté d&amp;rsquo;avoir une machine de prod fonctionnel, et le fait que Windows, ça ne se bidouille pas, auront eu raison de mon impatience de l&amp;rsquo;époque.&lt;/p&gt;
+&lt;p&gt;Et j&amp;rsquo;aime à me rassurer (oui, j&amp;rsquo;ai toujours eu un problème d&amp;rsquo;aimer Linux, alors je me rassure^^) en me disant que Windows est toujours installé sur ma bécane principale et qu&amp;rsquo;il est hors de question de la passer sous Linux.
+Le pragmatisme est une bonne conseillière&amp;hellip;
+Non, la multiplicité des OS, c&amp;rsquo;est aussi avoir la curiosité, sans prosélytisme, de faire ce que j&amp;rsquo;ai envie.&lt;/p&gt;
+&lt;p&gt;Le fait d&amp;rsquo;avoier Linux, c&amp;rsquo;est aussi une manière pour moi de reboucler mon histoire avec le pingouin, et surtout, de commencer ma transition vers l&amp;rsquo;ops (coucou &lt;a href=&#34;https://www.wescale.fr&#34;&gt;WeScale&lt;/a&gt; !).&lt;/p&gt;
+&lt;p&gt;En attendant, un jour, de partir sur Mac :)&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Naaan, je déconne.&lt;/p&gt;
+&lt;p&gt;Quoique.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Redscape&lt;/em&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Solitude</title>
+      <link>https://blog.glarose.fr/posts/solitude/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/solitude/</guid>
+      <description>Le bruit est sourd. Lancinant. Il fait mal au crâne, il veut se lâcher, mais ne peut pas. Il veut partir, s&amp;rsquo;échapper de ce corps, mais ne peut pas.
+Sa seule issue est la catharsis. Brutale. Franche. Nette. Une cassure à vrai dire.
+La solitude c&amp;rsquo;est ça. L&amp;rsquo;expression d&amp;rsquo;une Bête enfouie dans les tréfonds de nos âmes, et qui ne cesse de gagner du terrain.
+Parce que toujours, on nous a vanté les mérites d&amp;rsquo;une vie sociale, transformant la solitude en chimère immonde, celle que l&amp;rsquo;on va volontiers voir quand cette vie sociale n&amp;rsquo;est plus.</description>
+      <content>&lt;p&gt;Le bruit est sourd. Lancinant. Il fait mal au crâne, il veut se lâcher, mais ne peut pas. Il veut partir, s&amp;rsquo;échapper de ce corps, mais ne peut pas.&lt;/p&gt;
+&lt;p&gt;Sa seule issue est la catharsis. Brutale. Franche. Nette. Une cassure à vrai dire.&lt;/p&gt;
+&lt;p&gt;La solitude c&amp;rsquo;est ça. L&amp;rsquo;expression d&amp;rsquo;une Bête enfouie dans les tréfonds de nos âmes, et qui ne cesse de gagner du terrain.&lt;/p&gt;
+&lt;p&gt;Parce que toujours, on nous a vanté les mérites d&amp;rsquo;une vie sociale, transformant la solitude en chimère immonde, celle que l&amp;rsquo;on va volontiers voir quand cette vie sociale n&amp;rsquo;est plus.&lt;/p&gt;
+&lt;p&gt;La solitude m&amp;rsquo;enveloppe, me tord, me tire dans tous les sens, m&amp;rsquo;étire vers son karma. Elle joue, me malaxe, me fait mal, mais me réconforte, parce que &lt;em&gt;c&amp;rsquo;est pour mon bien&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Tu parles.&lt;/p&gt;
+&lt;p&gt;Plus tu t&amp;rsquo;y loves, plus tu t&amp;rsquo;y enfonces. Comme une mauvaise conseillère. C&amp;rsquo;est chaud, confortable. Un vrai cocon. Un nid de douceur. Une douceur dangeureuse, vénéneuse, morbide.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Morbide.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;La mort serait-elle le seul enjeu de cette vie de trépas ? Une vie à se torturer l&amp;rsquo;âme, jusqu&amp;rsquo;à plus soif, amené gentimen par cette solitude justement.&lt;/p&gt;
+&lt;p&gt;Piètre consolation.&lt;/p&gt;
+&lt;p&gt;Mais la mort permet une délivrance. La libération comme seul point de repère.
+Au loin, c&amp;rsquo;est blanc, c&amp;rsquo;est beau, c&amp;rsquo;est irréel, ça ressemble à du repos. Derrière c&amp;rsquo;est le feu, le désert, le néant, le vide qui s&amp;rsquo;anime et se remplit.&lt;/p&gt;
+&lt;p&gt;La chimère est toujours là, elle me suit, elle me traque, elle me veut.
+Elle va m&amp;rsquo;avoir c&amp;rsquo;est certain.
+Quels artifices ai-je pour pouvoir me mouvoir hors de ses griffes ? Quels mécanismes vais-je devoir délivrer pour ne plus avoir à la fuir ?&lt;/p&gt;
+&lt;p&gt;En ais-je la volonté ? Je ne sais pas.&lt;/p&gt;
+&lt;p&gt;Ce soir en tout cas, non.
+Qu&amp;rsquo;elle me rattrape, si elle le désire.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Redscape&lt;/em&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>5 Podcasts d&#39;histoires paranormales et horrifiques qu&#39;il vous faut écouter avant d&#39;aller dormir (ou pas)</title>
+      <link>https://blog.glarose.fr/posts/5-podcasts-dhistoires-paranormales-et-horrifiques-quil-vous-faut-ecouter-avant-daller-dormir-ou-pas/</link>
+      <pubDate>Tue, 26 Oct 2021 01:25:00 +0200</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/5-podcasts-dhistoires-paranormales-et-horrifiques-quil-vous-faut-ecouter-avant-daller-dormir-ou-pas/</guid>
+      <description>Transition Ghost &amp;gt; Hugo : 26/10/2021 MàJ du texte : 28/06/2021
+J&amp;rsquo;ai toujours été fasciné par les histoires de fantômes, d&amp;rsquo;esprits, de créatures horrifiques et autres apparitions étranges qui défient les lois de la physique et nous poussent à la réflexion sur notre condition d&amp;rsquo;humain.‌‌ Bien que Youtube ait démocratisé le mouvement paranormal, notamment via la multiplication des chaînes de chasses aux fantômes, qui sont, de mon point de vue, tout sauf pertinentes pour la plupart, j&amp;rsquo;accorde une plus grande importance au format podcast audio, qui laisse le soin à l&amp;rsquo;auditeur d&amp;rsquo;imaginer ses propres projections au travers de son histoire personnelle.</description>
+      <content>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Transition Ghost &amp;gt; Hugo : 26/10/2021&lt;/em&gt;
+&lt;em&gt;MàJ du texte : 28/06/2021&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;J&amp;rsquo;ai toujours été fasciné par les histoires de fantômes, d&amp;rsquo;esprits, de créatures horrifiques et autres apparitions étranges qui défient les lois de la physique et nous poussent à la réflexion sur notre condition d&amp;rsquo;humain.‌‌ 
+Bien que Youtube ait démocratisé le mouvement paranormal, notamment via la multiplication des chaînes de chasses aux fantômes, qui sont, de mon point de vue, tout sauf pertinentes pour la plupart, j&amp;rsquo;accorde une plus grande importance au format podcast audio, qui laisse le soin à l&amp;rsquo;auditeur d&amp;rsquo;imaginer ses propres projections au travers de son histoire personnelle.&lt;/p&gt;
+&lt;p&gt;En préparant ce billet, je me suis souvenu de ces émissions, diffusés sur &lt;em&gt;TF1&lt;/em&gt; à cette époque, qui relataient des histoires étranges. Bien sûr, comme vous le montre la vidéo ci-dessous, nous sommes bel et bien devant une émission à but sensationnaliste, comme cette chaîne sait si bien le faire (et la société de production de l&amp;rsquo;émission, regardez bien les premières secondes). ‌‌Vous m&amp;rsquo;excuserez par avance, j&amp;rsquo;étais &amp;ldquo;petit&amp;rdquo; (mais assez grand pour regarder), mes parents m&amp;rsquo;accordant très peu le droit de regarder la télé le soir, je pourrai tout naturellement leur en vouloir de ce choix de me laisser regarder un programme d&amp;rsquo;une qualité aussi discutable. ‌‌Il faut bien le dire, je n&amp;rsquo;avais pas le recul nécessaire.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/7w87yKzXX2o&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Avant d&amp;rsquo;arriver à cette présentation de podcasts, laissez-moi vous narrer ce qui m&amp;rsquo;a conduit à m&amp;rsquo;intéresser à ces sujets.‌‌‌‌J&amp;rsquo;ai eu des peurs enfantines assez effrayantes et tenaces.‌‌Le premier qui me vient en tête est ce valet de chambre (un espèce de porte-manteau géant, avec un grand bâton et une tête de nounours effrayante au sommet) qui m&amp;rsquo;a fichu de belles peurs bleues.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/WB160844210_1.jpeg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Là, c&#39;est soft. Je vous jure que le mien était ENCORE plus flippant.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Je pensais tout simplement que ce machin bougeait, en particulier lorsque la pénombre s&amp;rsquo;immisçait dans ma chambre, avant la nuit noire. Valet de chambre qui se transformait même en mon grand-père (pourtant vivant…) en pleine nuit. Le même objet que je tiendrai pour responsable de certaines de mes plus grosses crises d&amp;rsquo;épilepsies qui ont été mon quotidien entre l&amp;rsquo;âge de 5 ans à 11 ans. C&amp;rsquo;est d&amp;rsquo;ailleurs après une dernière grosse crise qui a failli mal tourner (j&amp;rsquo;ai terminé à l&amp;rsquo;hôpital cette nuit-là) que j&amp;rsquo;ai demandé à mes parents d&amp;rsquo;enlever ce truc de ma chambre. Aujourd&amp;rsquo;hui encore, je m&amp;rsquo;interroge sur son rôle dans ma maladie, mais aussi sur mes cauchemars récurrents où il intervenait sans cesse.‌‌ ‌‌&lt;/p&gt;
+&lt;p&gt;Autre peur enfantine, le générique d&amp;rsquo;X-Files quand la série passait le soir (le jeudi de mémoire) sur M6 (ma chambre donnant directement au dessus du salon d&amp;rsquo;où mes parents regardaient la télé). A cette époque, mes cauchemars étaient si terribles (si bien que je me souviens de certains encore aujourd&amp;rsquo;hui) qu&amp;rsquo;il m&amp;rsquo;arrivait fréquemment de refuser d&amp;rsquo;aller dormir.‌&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/l3U31vyAtFk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Puis, ces terreurs nocturnes se sont apaisés peu à peu. Elles se sont atténués, bien que certains cauchemars de cette époque reviennent encore me visiter aujourd&amp;rsquo;hui.&lt;/p&gt;
+&lt;p&gt;Les années passant, ces moments (douloureux) de ma vie où je pense avoir été confronté à quelque chose d&amp;rsquo;étrange (le mot me paraît un poil trop fort) se sont estompés. Au fur et à mesure que je grandissais, j&amp;rsquo;ai pu m&amp;rsquo;apaiser et surtout, trouver quelques réponses qui ont peu à peu nourri un scepticisme quant à la probabilité, voire la véracité des phénomènes paranormaux. Il est fort probable que ma maladie d&amp;rsquo;alors, couplé à ce valet de chambre, m&amp;rsquo;ont tout à fait vriller la tête.&lt;/p&gt;
+&lt;p&gt;Concernant les OVNIS ou les histoires autour de la Zone 51, ma formation scientifique et mes nombreuses lectures m&amp;rsquo;ont suffi à me convaincre que bon nombre de ces histoires, liées en général au Grand Complot Mondial, à la CIA ou au KGB, ne relèvent pas plus du paranormal que de la folie des hommes.Cela ne veut pas dire que j&amp;rsquo;y crois pas, non, il y aura (toujours) une part de mystères dans tout ça. Mais j&amp;rsquo;ai réussi très jeune à faire la part des choses à ce sujet, même si au fond de moi, je voulais y croire (vous l&amp;rsquo;avez ?).&lt;/p&gt;
+&lt;p&gt;Enfin, j&amp;rsquo;ai regardé et surtout adoré X-Files qui est même devenu une de mes séries préférés.&lt;/p&gt;
+&lt;p&gt;‌‌‌‌Peu à peu, je me suis intéressé puis documenté sur le sujet du paranormal, en faisant très attention à la provenance de mes sources.&lt;/p&gt;
+&lt;p&gt;Il se trouve que par un (mal)heureux hasard, j&amp;rsquo;habitais (et habite toujours) pas très loin du célèbre &lt;a href=&#34;https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Combourg&#34;&gt;Château de Combourg&lt;/a&gt;, en Ille-Et-Vilaine (35).&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/combourg_situation.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Situation géographique du Château de Combourg. Source : Apple Plans pour Duckduckgo&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/France_Bretagne_Ille-et-Vilaine_Combourg_chateau_01.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Un bien joli château, construit entre le XIIème et le XVème siècle. Source : Wikimedia&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Ce château, connu pour y avoir abrité le célèbre écrivain &lt;a href=&#34;https://fr.wikipedia.org/wiki/Fran%C3%A7ois-Ren%C3%A9_de_Chateaubriand&#34;&gt;François-René de Chateaubriand&lt;/a&gt;, était soi-disant hanté. L&amp;rsquo;écrivain, né à Saint-Malo, y a passé une partie de son enfance, enfance pas jouasse du tout d&amp;rsquo;ailleurs, à tel point qu&amp;rsquo;il cite cette hantise dans ses &lt;em&gt;Mémoires d&amp;rsquo;Outre-Tombe&lt;/em&gt;. ‌‌L&amp;rsquo;émission dont je vous ai mis le lien un peu plus haut le mentionne, en faisant preuve, bien entendu, d&amp;rsquo;une non-retenue très caractéristique.&lt;/p&gt;
+&lt;p&gt;Que raconte donc cette histoire de hantise ? Une jambe de bois, appartenant à un ancien seigneur, Malo-Auguste de Coëtquen, et un chat, se promènerait en mode WTF la nuit dans le grand escalier de la tourelle, sans prévenir les gens. Les bougres.‌‌ Outre son propriétaire qui a perdu sa jambe lors d&amp;rsquo;une bataille, la présence du chat  s&amp;rsquo;explique par le fait qu&amp;rsquo;il a été retrouvé emmuré lors de la restauration du château au XIXème siècle mais dont le méfait aurait été commis au XVIe siècle.Bref, je vous laisse imaginer les propriétaires (comtes de la Tour de Pin de je-ne-sais-pas-quoi, je vous laisse le soin d&amp;rsquo;aller vérifier sur les Internets) pouvant jouir d&amp;rsquo;une telle histoire pour rameuter la peuplade avide de sensations fortes (spoiler : non).&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/NtcSlqzrbjg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;‌‌Bien qu&amp;rsquo;à côté de chez moi, je ne l&amp;rsquo;ai jamais visité, il est presque devenu aussi inintéressant que des lieux comme le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Fougeret&#34;&gt;Château de Fougeret&lt;/a&gt; (Vienne).J&amp;rsquo;essayerai tout de même d&amp;rsquo;y faire un saut un de ces 4, et qui sait, de vous en narrer la visite sur ce blog.&lt;/p&gt;
+&lt;p&gt;Bref, vous n&amp;rsquo;êtes pas venus ici pour que je vous raconte des histoires de chats qui ne savent pas quoi faire de leurs 7 vies la nuit.‌‌‌ C&amp;rsquo;est grâce aux podcasts que j&amp;rsquo;écoute que je peux assouvir ma passion sur le sujet, sans risque que l&amp;rsquo;on me demande si je crois ou non aux fantômes (spoiler : je ne vous le dirai pas).&lt;/p&gt;
+&lt;p&gt;Histoires supposément vraies mais aussi fictions au travers des creepypastas (histoires courtes horrifiques qui pullulent sur le net et en particulier sur &lt;a href=&#34;https://www.reddit.com/r/creepypasta/&#34;&gt;Reddit&lt;/a&gt;), ces podcasts ne vous demanderont pas d&amp;rsquo;y croire, mais de faire votre propre jugement personnelle.‌‌Ils sont tous disponible sur les principales plateformes de podcasts, même si je ne saurai que trop vous recommander l&amp;rsquo;écouter et la recherche de la plupart d&amp;rsquo;entre eux via &lt;a href=&#34;https://podcloud.fr&#34;&gt;podCloud&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;le-bureau-des-mystères-charles-et-mathias&#34;&gt;Le Bureau des Mystères (Charles et Mathias)&lt;/h2&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/lbdm.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Artwork du Bureau des Mystères (à partir de la saison 3)&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Produit par &lt;strong&gt;Charles&lt;/strong&gt; et &lt;strong&gt;Mathias &lt;em&gt;(Inspiré de Faits Réels)&lt;/em&gt;&lt;/strong&gt;, apparu en Octobre 2017 et comptant à ce jour 3 saisons, ce podcast se fonde sur une ambiance de bureau de travail où l&amp;rsquo;on imagine des dossiers empilés à traiter.‌‌Il est intéressant à plus d&amp;rsquo;un titre puisque les 2 animateurs nous livrent des histoires vraies (même si des creepypastas sont venus égayer quelques épisodes). Chaque histoire est noté selon un niveau de mystère et surtout s&amp;rsquo;ils doivent rester ouverts ou pas.‌‌D&amp;rsquo;abord produit sous le label &amp;ldquo;&lt;a href=&#34;http://www.rivieraferraille.com&#34;&gt;Rivieira Ferraille&lt;/a&gt;&amp;rdquo;, les 2 compères s&amp;rsquo;en sont éloignés (suite à l&amp;rsquo;affaire &lt;em&gt;&lt;a href=&#34;https://www.lemonde.fr/pixels/article/2019/02/10/journalistes-reseaux-sociaux-et-harcelement-comprendre-la-polemique-sur-la-ligue-du-lol_5421698_4408996.html&#34;&gt;Henri Michel&lt;/a&gt;)&lt;/em&gt; pour s&amp;rsquo;autoproduire depuis la saison 3. L&amp;rsquo;ambiance feutrée et la qualité de narration, ainsi que les recherches faites sur chaque histoire témoigne d&amp;rsquo;un sérieux qui donne vraiment envie de se plonger dans ces histoires étranges, redonnant ainsi les lettres de noblesse au paranormal.&lt;/p&gt;
+&lt;p&gt;A noter que Charles et Mathias produisent un podcast qui a servi (sans doute) de terreau pour Le Bureau des Mystères, &lt;a href=&#34;https://podcloud.fr/podcast/inspire-de-faits-reels&#34;&gt;Inspiré de Faits Réels&lt;/a&gt;, publié en alternance tous les 15 jours.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note 2021&lt;/strong&gt;: Le podcast s&amp;rsquo;est arrêté après cette 3ème saison. Les épisodes restent néanmoins en ligne._‌&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://podcloud.fr/podcast/le-bureau-des-mysteres&#34;&gt;Le Bureau des Mystères&lt;/a&gt;, Charles et Mathias, autoproduit&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3 saisons, 47 épisodes&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/BDMlepodcast/&#34;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;avant-daller-dormir-yop-et-undixgo&#34;&gt;Avant D&amp;rsquo;Aller Dormir (Yop et UnDixGo)&lt;/h2&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/Avant_d_aller_dormir_Podcast.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Artwork d&#39;Avant d&#39;Aller Dormir.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Et encore un duo de 2 podcasteurs. ‌‌&lt;strong&gt;Yop&lt;/strong&gt; et &lt;strong&gt;UnDixGo&lt;/strong&gt;, racontent, tour à tour, des histoires horrifiques, tirés de leur pérégrinations sur Internet. ‌‌Le podcast est par moment réellement effrayant, tant les histoires sélectionnées le sont tout autant. Le titre n&amp;rsquo;est pas là par hasard, et pour l&amp;rsquo;avoir tester, je me suis surpris par 2 fois en train de relever ma couette.‌‌Mention spéciale à la bonne humeur du duo qui racontent également leur ressenti sur les histoires racontées et en particulier à &lt;strong&gt;UnDixGo&lt;/strong&gt; qui aime détendre l&amp;rsquo;atmosphère avec son rire communicatif.‌‌La petite équipe possède une graphiste qui dessine les pochettes et une communauté au travers d&amp;rsquo;un Discord.‌‌Petit bémol sur la narration proposée, qui serait, à mon avis, à améliorer, notamment sur comment raconter l&amp;rsquo;histoire et ainsi, mieux plonger l&amp;rsquo;auditeur dans l&amp;rsquo;ambiance. Mise à part ça, c&amp;rsquo;est un podcast qui s&amp;rsquo;écoute très bien parce qu&amp;rsquo;on sent les 2 animateurs de plus en plus à l&amp;rsquo;aise au fur et à mesure des épisodes.‌‌&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://podcloud.fr/podcast/adad&#34;&gt;Avant d&amp;rsquo;aller dormir&lt;/a&gt;, Yop et UnDixGo, autoproduit&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;19 épisodes&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://avantdallerdormir.fr&#34;&gt;Site Internet&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nuit-blanche-couleur-3---rts&#34;&gt;Nuit Blanche (Couleur 3 - RTS)&lt;/h2&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/nuit_blanche.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Artwork de Nuit Blanche&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Mon dernier coup de coeur. ‌‌C&amp;rsquo;est un podcast original de la 3ème radio de la Radio Télévision Suisse (romande, donc la partie francophone), Couleur 3.‌‌Avec &lt;strong&gt;Mickaël Marquet&lt;/strong&gt; et &lt;strong&gt;Anne Flament&lt;/strong&gt;, vous allez plonger dans des récits d&amp;rsquo;histoires réelles, avec une partie narration, ponctué d&amp;rsquo;extraits de films ou de musiques, parfois pas raccord avec l&amp;rsquo;histoire, voire carrément too much (les cris amplifiés par la reverb, ça n&amp;rsquo;est pas très naturel), et ça sera d&amp;rsquo;ailleurs mon seul reproche. Les auteurs délivrent ensuite la plupart du temps un ressenti personnel, mais bien sûr, dans ce genre de podcast, on ressort parfois avec plus de questions et de réponses.‌‌Mention spéciale pour les recommandations, qu&amp;rsquo;elles soient bibliographiques ou vidéoludiques, elles permettent d&amp;rsquo;approfondir les sujets évoqués. J&amp;rsquo;ai découvert dans ce podcast bien des choses que j&amp;rsquo;ignorais sur des sujets paranormaux, comme les EMI négatives, réellement flippantes et terriblement traumatisante pour la personne qui les vit.‌‌La parution se fait tous les soirs de pleine Lune, et ils en sont actuellement à la fin de la 3ème saison, qui sera vraisemblablement la dernière.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://podcloud.fr/podcast/nuit-blanche-rts&#34;&gt;Nuit Blanche&lt;/a&gt;, Mickaël Marquet et Anne Flament, Couleur 3 (RTS)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3 saisons, 19 épisodes&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://podcloud.fr/podcast/nuit-blanche-rts&#34;&gt;Site Internet&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;in-tenebris-marine-benoît&#34;&gt;In Tenebris (Marine Benoît)&lt;/h2&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/in_tenebris.webp&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Artwork d&#39;In Tenebris&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Dernier podcast de la sélection, peut être l&amp;rsquo;un (avec Nuit Blanches) des plus investis en terme de production, ou en tout cas écriture/narration. Proposé par la journaliste &lt;a href=&#34;https://twitter.com/marin_eben&#34;&gt;Marine Benoît&lt;/a&gt;, les mystères racontés, tous réelles, sont pour le moins originaux. car moins médiatiques que ceux présentés dans Le Bureau des Mystères par exemple.Mention spéciale au générique qui donne tout le ton à ce podcast.‌‌La publication s&amp;rsquo;est (&lt;a href=&#34;https://twitter.com/InTenebrisAudio/status/1263191538961657856&#34;&gt;pour le moment&lt;/a&gt;) arrêté, le dernier épisode datant de Novembre 2019, même si l&amp;rsquo;on se doute en l&amp;rsquo;entendant qu&amp;rsquo;il faille du temps pour l&amp;rsquo;écrire et le produire.‌‌‌‌L&amp;rsquo;histoire sitôt raconté, un entretien est ensuite mené avec un spécialiste, ce qui permet d&amp;rsquo;approfondir des aspects, sociétale notamment, et nous évite l&amp;rsquo;habituel pathos autour des phénomènes étranges.‌‌&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://podcast.ausha.co/in-tenebris&#34;&gt;In Tenebris&lt;/a&gt;, Marie Benoît, Ausha&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;6 épisodes&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;‌‌&lt;a href=&#34;https://twitter.com/InTenebrisAudio&#34;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;‌Cette liste est bien entendu non exhaustive, il y a bien d&amp;rsquo;autres podcasts sur le sujet, mais le temps n&amp;rsquo;est pas une notion qui s&amp;rsquo;étire à volonté pour pouvoir tout écouter.A noter que certains mystères sont devenus redondants (Diatlov, Enfield&amp;hellip;), mais chaque podcast possède sa patte et sa spécificité, si bien que l&amp;rsquo;histoire peut paraître unique rien qu&amp;rsquo;à la narration proposée.&lt;/p&gt;
+&lt;p&gt;On y croit ou pas, la question n&amp;rsquo;est pas là, chacun a et se fera sa propre opinion. ‌‌&lt;/p&gt;
+&lt;p&gt;Le point commun de toutes ces productions audios serait à chercher du côté de la démystification du paranormal, ce qui n&amp;rsquo;est pas une mince affaire vu la tonne de déchets consacrés au sujet. J&amp;rsquo;ai tendance à penser que tant que l&amp;rsquo;on n&amp;rsquo;est pas confronté au sujet, on peut toujours en rigoler et se moquer des gens qui y croient, voire même, travaillent sur le sujet, parce que de plus en plus de scientifiques prennent à bras le corps des sujets se rapprochant de domaines comme l&amp;rsquo;étude du cerveau, dans le cas des EMI négatives par exemple.‌‌ ‌‌J&amp;rsquo;avoue pour ma part être sans arrêt aussi sceptique que possible, mais que certains dossiers laissent réellement dubitatif.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/Dame_brune_de_Raynham_Hall_2.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Photo intitulé La Dame Brune de Raynham Hall. Prise en 1936, cette photo a été débunké.&amp;nbsp;&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Comme je l&amp;rsquo;ai dit plus haut, plus de questions vous viendront à la fin de l&amp;rsquo;écoute d&amp;rsquo;un de ces podcasts que de réponses franches et nets. Le fait est que le paranormal est un sujet ouvert, où nos connaissances en sont encore au stade embryonnaire.&lt;/p&gt;
+&lt;p&gt;Je serai bien tenté, pour ma part de lancer mon propre podcast sur le sujet, mais je ne sais guère sous quel angle l&amp;rsquo;orienter. Une idée sans doute à mûrir.‌‌‌‌En attendant, je vais davantage en parler sur ce blog, qui est, à l&amp;rsquo;occasion de cet article, réactivé.Un dernier conseil, gardez la lumière allumée&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Parce qu&amp;rsquo;on ne sait jamais&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Redscape&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Un si long silence</title>
+      <link>https://blog.glarose.fr/posts/un-si-long-silence/</link>
+      <pubDate>Thu, 18 Jun 2020 23:38:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/un-si-long-silence/</guid>
+      <description>La journée se déroule, sans relief, sans saveur. Une journée pour vivre et se cacher. Se cacher de sentiments inverses, se cacher pour mieux réfléchir et infléchir la tendance négative du moment. Se cacher d’un silence de mort, le grand silence, celui qui fait peur, celui qui dit tout, mais aussi rien à fois. Celui qui fait mal eu ventre et à la tête. La journée est définie par une convention de 24h, c’est plus que ce que l’humain supporte.</description>
+      <content>&lt;p&gt;La journée se déroule, sans relief, sans saveur. Une journée pour vivre et se cacher.
+Se cacher de sentiments inverses, se cacher pour mieux réfléchir et infléchir la tendance négative du moment.
+Se cacher d’un silence de mort, le grand silence, celui qui fait peur, celui qui dit tout, mais aussi rien à fois. 
+Celui qui fait mal eu ventre et à la tête. 
+La journée est définie par une convention de 24h, c’est plus que ce que l’humain supporte.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Le silence est éternel.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Chacun se cache, se voile, se démène pour calmer la tempête déclenché dans chaque tête.Ça fait mal, ça cogne, ça s’entrechoque. 
+Quelques mots du quotidien jetés sur un ton neutre.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Rien de bien sérieux.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;La colère est sourde, lourde, elle est là, elle cherche la moindre interstice pour intégrer l’esprit de l’un d’entre nous.
+Et finalement.
+Chacun vaque à ses occupations. 
+Dormir, scroller ces fichus réseaux sociaux, partir faire des tâches quotidiennes pour l’un, s’occuper des rejetons, travailler sur un sujet sérieux, réorganiser son numérique et écrire ce texte pour l’autre.
+L’espace intérieur est sacré, il ne faut pas y toucher. 
+Combien de temps pour que ce silence finisse par se transformer en paroles et actes ?
+Nul ne sait. 
+Les corps pourront fusionner, mais les idées sont loin, trop loin.&lt;/p&gt;
+&lt;p&gt;Un instant, les âmes pourront se connecter. Pour mieux se déchirer et mettre l’âme à sac. C’est un vol à l’arraché, un coup de canif dans le contrat global qui unit 2 êtres.&lt;/p&gt;
+&lt;p&gt;La nuit ne portera aucun conseil, les adages ne sont pas très bon pour évoquer des cas complexes.
+La sentence sera rigide et pleine de mauvais sentiments, mais la libération qu’elle procurera permettra au silence de laisser place à l’espoir, après que sera parti les derniers doutes.&lt;/p&gt;
+&lt;p&gt;Tant que ce silence roulera des mécaniques la vérité n’éclatera pas, le bonheur restera ailleurs. 
+A moins que l’un d’entre eux se dévoile et brise ce silence.
+Oui c’est tout à fait possible. 
+Ce jour là sera un autre jour, pas celui d’aujourd’hui, mais d’un autre destin.&lt;/p&gt;
+&lt;p&gt;La destination est inconnue, et ne mérite pas que l’on s’y attarde. 
+Attaquer des problèmes bien réels.
+Brisons le brouillard mis en place par le silence.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Le néant guette dans un coin.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Redscape.&lt;/em&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Asceptic Siliceum - Chaotic Paths (Abstrakt Reflections - 2019)</title>
+      <link>https://blog.glarose.fr/posts/asceptic-siliceum-chaotic-paths-abstrakt-reflections-2019/</link>
+      <pubDate>Sun, 18 Aug 2019 22:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/asceptic-siliceum-chaotic-paths-abstrakt-reflections-2019/</guid>
+      <description>C&amp;rsquo;est un petit billet de blog assez spécial pour moi, puisqu&amp;rsquo;il s&amp;rsquo;agit de vous parler et surtout de vous annoncer la sortie de mon premier EP, sur le label argentin Abstrakt Reflections, &amp;ldquo;Chaotic Paths&amp;rdquo;.
+Oui, je peux le dire, j&amp;rsquo;en suis assez fier, même si j&amp;rsquo;ai eu du mal à le porter. Du mal, parce que je l&amp;rsquo;ai composé dans une période où ça n&amp;rsquo;allait pas vraiment, les morceaux s&amp;rsquo;en ressentent d&amp;rsquo;ailleurs, beaucoup de noirs, de nuances de noirs même, du sombre, pas de délicatesse, de la violence sonore sur quelques morceaux, quelques mélodies d&amp;rsquo;un espoir qui sombre dans la démence.</description>
+      <content>&lt;p&gt;C&amp;rsquo;est un petit billet de blog assez spécial pour moi, puisqu&amp;rsquo;il s&amp;rsquo;agit de vous parler et surtout de vous annoncer la sortie de mon premier EP, sur le label argentin Abstrakt Reflections, &amp;ldquo;Chaotic Paths&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Oui, je peux le dire, j&amp;rsquo;en suis assez fier, même si j&amp;rsquo;ai eu du mal à le porter. 
+Du mal, parce que je l&amp;rsquo;ai composé dans une période où ça n&amp;rsquo;allait pas vraiment, les morceaux s&amp;rsquo;en ressentent d&amp;rsquo;ailleurs, beaucoup de noirs, de nuances de noirs même, du sombre, pas de délicatesse, de la violence sonore sur quelques morceaux, quelques mélodies d&amp;rsquo;un espoir qui sombre dans la démence.Mais à côté de ça, j&amp;rsquo;ai cette satisfaction d&amp;rsquo;avoir terminé un projet, et de l&amp;rsquo;avoir mené jusqu&amp;rsquo;au bout, ce qui me fait enfin sortir du syndrome de la boucle, bien connu des musiciens, et qui durait depuis trop longtemps pour moi.&lt;/p&gt;
+&lt;p&gt;Bref c&amp;rsquo;est mon cheminement intérieur que j&amp;rsquo;ai voulu explorer.Il m&amp;rsquo;a fallu 15 ans, 15 ans de morceaux ratés, jetés à la poubelle, perdu, recommencé. Des morceaux faits à tâtons, où je n&amp;rsquo;espérais même plus trouver une direction.Et comme ne l&amp;rsquo;indique pas la pochette, j&amp;rsquo;ai fini par trouver la lumière au bout du tunnel, d&amp;rsquo;abord via le 1er morceau, &amp;ldquo;Centuries Fogs&amp;rdquo; que j&amp;rsquo;avais soumis pour le concours annuel du podcast &amp;ldquo;Les Sondiers&amp;rdquo; (et que vous pouvez retrouver à l&amp;rsquo;écoute à cette adresse : &lt;a href=&#34;http://lessondiers.com/emission/jan-2018/81-les-prods-de-no%C3%ABl-2017-des-auditeurs&#34;&gt;http://lessondiers.com/emission/jan-2018/81-les-prods-de-noël-2017-des-auditeurs&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Morceau qui a eu son petit succès auprès des animateurs de cette émission (le fameux frigo dans ta face à la Bruce Willis), et qui m&amp;rsquo;a donné envie de déterrer ces morceaux qui n&amp;rsquo;ont jamais abouti. De là, 3 autres morceaux sont venus s&amp;rsquo;ajouter.&lt;/p&gt;
+&lt;p&gt;Voyant que cela commençait à ressemblait à un univers sonore cohérent, j&amp;rsquo;ai décidé de le soumettre à des labels. J&amp;rsquo;ai tapé dans le 1er label qui m&amp;rsquo;est venu à l&amp;rsquo;esprit, Abstrakt Reflections, devenu aujourd&amp;rsquo;hui ma maison.La réponse a été plus que positive, et après quelques discussions, le patron, c0ma, a voulu sortir mes morceaux, tout en me demandant d&amp;rsquo;en ajouter un dernier.&lt;/p&gt;
+&lt;p&gt;Sur cette track, &amp;ldquo;Espérance Délaissée&amp;rdquo;, outre le titre qui ne laisse que peu de places à l&amp;rsquo;interprétation, l&amp;rsquo;idée générale a été de conclure l&amp;rsquo;EP par un morceau avec une mélodie, simple si possible et un rythme simple, mais lourd, dur, malaisant.Mais au fur et à mesure, sont venus s&amp;rsquo;ajouter des kicks furieux, des nappes sonores qui grondent au loin, une basse qui vombrit, et finalement plus rien. Le chaos. Bref, tel que je me suis imaginé ce &amp;ldquo;chemin chaotique&amp;rdquo;, titre de mon EP qui n&amp;rsquo;a pas bougé d&amp;rsquo;un iota depuis mes 1ères pensées de sortie d&amp;rsquo;EP.Bref, c&amp;rsquo;est la conclusion de 15 ans de recherches, de découvertes, d&amp;rsquo;écoutes, de productions non abouti, et dont le résultat se résume en 5 titres.&lt;/p&gt;
+&lt;p&gt;Je vous propose l&amp;rsquo;écoute de la preview, utilisé pour la promotion de cet EP :&lt;/p&gt;
+&lt;iframe 
+    width=&#34;100%&#34;
+    height=&#34;450&#34;
+    scrolling=&#34;no&#34;
+    frameborder=&#34;no&#34;
+    allow=&#34;autoplay&#34;
+    src=&#34;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/817494459&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&#34;
+&gt;&lt;/iframe&gt;
+&lt;p&gt;Je me dois de signaler le travail remarquable de mastering opéré par François TJP, aux manettes pour fignoler le projet, et qui, si je ne m&amp;rsquo;abuse, termine cette 1ère expérience de mastering avec brio. Je l&amp;rsquo;en remercie du fond du coeur, des mecs en or comme ça prêt à vous aider sans la moindre contrepartie, ça ne se trouve pas à tous les coins de rue. Et il a l&amp;rsquo;insigne honneur d&amp;rsquo;apparaître sur la pochette arrière.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/chaotic_paths_rear.jpg&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;En parlant de pochette, saluons le magnifique travail de &lt;strong&gt;THEPOSTHUMAN&lt;/strong&gt; qui n&amp;rsquo;est autre que mon patron de label.Alors que mon 1er artwork ne ressemblait pas à grand chose (et pour cause je comptais m&amp;rsquo;auto-publier au départ), &lt;a href=&#34;https://facebook.com/c0ma&#34;&gt;c0ma&lt;/a&gt;, boss du label &lt;a href=&#34;https://abstraktreflections.net&#34;&gt;Abstrakt Reflections&lt;/a&gt;, a su rendre exactement ce que j&amp;rsquo;avais en tête : un univers sombre, décadent, sale, sans avenir, à l&amp;rsquo;image de mes morceaux complètement fous pour certains.&lt;/p&gt;
+&lt;p&gt;Après tout ça, que faire ?Me reposer de cet EP. Le digérer.Et je repartirai sans doute dans l&amp;rsquo;écriture du prochain. Je ne me sens pas encore prêt pour le format album. Mais ce prochain EP devrait voir apparaître plus de lumière, moins de noir dans mes créations. Même si je souhaite encore le situer dans un monde post-apocalyptique, je me suis rendu compte que j&amp;rsquo;avais laissé ma noirceur envahir mes compositions. Cela sert très bien mon propos aujourd&amp;rsquo;hui, et c&amp;rsquo;est aussi tout l&amp;rsquo;idée derrière la digestion. C&amp;rsquo;est lourd, tant de sombres, de saletés. Très lourd. Je souhaite que cet EP devienne un témoignage de cette période de ma vie où toute vision était trouble, sans lumière au loin, avec, pour seuls compagnons, de sombres pensées.&lt;/p&gt;
+&lt;p&gt;Enfin, pour conclure, je remercie les personnes suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;c0ma, boss du label Abstrakt Reflections, qui m&amp;rsquo;a accompagné pendant tout le processus de sortie de l&amp;rsquo;EP.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://studiotjp.com&#34;&gt;François TJP&lt;/a&gt;, sans qui le projet n&amp;rsquo;aurait pu se concrétiser, qui s&amp;rsquo;est occupé du mastering et m&amp;rsquo;a encouragé à aller jusqu&amp;rsquo;au bout.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lessondiers.com&#34;&gt;Les Sondiers&lt;/a&gt;, le podcast qui m&amp;rsquo;a redonné envie de composer de la musique&lt;/li&gt;
+&lt;li&gt;Adrien Landivier, ancien producteur à Radio France qui m&amp;rsquo;a transmis, via son émisison &amp;ldquo;Glitch sur Le Mouv&amp;rsquo;&amp;rdquo;, cette passion pour les sons bizarres.&lt;/li&gt;
+&lt;li&gt;Et tous ces artistes, Aphex Twin, Autechre, Richard Devine, et bien d&amp;rsquo;autres encore, pour leurs influences multiples qui m&amp;rsquo;ont façonné pour toujours dans le moule de l&amp;rsquo;IDM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ainsi que tous les autres que j&amp;rsquo;aurai pu oublier.&lt;/p&gt;
+&lt;p&gt;Vous pouvez écouter cet EP sur Soundcloud, ainsi que sur la plateforme Bandcamp, où vous pouvez faire un don qui sera reversé au label.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Je précise d&amp;rsquo;ailleurs que ma musique est sous licence Creative Commons BY-CC-ND, dont les termes exacts sont disponibles à l&amp;rsquo;adresse suivante : &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr&#34;&gt;https://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Redscape.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>ASpaceMR, un projet qu&#39;il est bien</title>
+      <link>https://blog.glarose.fr/posts/aspacemr-un-projet-quil-est-bien/</link>
+      <pubDate>Mon, 08 Jul 2019 22:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/aspacemr-un-projet-quil-est-bien/</guid>
+      <description>Dans la vie, les choses peuvent venir de manière totalement naturelle, sans quoi que ce soit ne soit ni imposé, ni planifié.
+C&amp;rsquo;est ainsi que je me suis retrouvé à sonoriser un projet crée par Phil Goud, dont le but (non officiel) serait de faire pioncer les gens. Le sujet s&amp;rsquo;y prête volontiers : l&amp;rsquo;Espace. Raconter l&amp;rsquo;espace. L&amp;rsquo;idée n&amp;rsquo;est pas nouvelle, Phil Goud avouera lui-même s&amp;rsquo;être inspiré de Michel Boujenah qui proposa la même chose dans les années 90.</description>
+      <content>&lt;p&gt;Dans la vie, les choses peuvent venir de manière totalement naturelle, sans quoi que ce soit ne soit ni imposé, ni planifié.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est ainsi que je me suis retrouvé à sonoriser un projet crée par Phil Goud, dont le but (non officiel) serait de faire pioncer les gens. Le sujet s&amp;rsquo;y prête volontiers : l&amp;rsquo;Espace. Raconter l&amp;rsquo;espace. L&amp;rsquo;idée n&amp;rsquo;est pas nouvelle, Phil Goud avouera lui-même s&amp;rsquo;être inspiré de Michel Boujenah qui proposa la même chose dans les années 90.&lt;/p&gt;
+&lt;p&gt;Lorsque je suis tombé sur ce qui n&amp;rsquo;était qu&amp;rsquo;un Work In Progress, la connexion avec les musiques électroniques am&amp;rsquo;a paru évidente.Si vous me connaissez, ce sont mes chers territoires de l&amp;rsquo;ambient, de l&amp;rsquo;IDM et de l&amp;rsquo;electronica qui pourrait servir de decorum aux textes écrits et déclamés par Phil Goud.&lt;/p&gt;
+&lt;p&gt;Chaque épisode permet à l&amp;rsquo;auditeur de s&amp;rsquo;immerger dans un coin de l&amp;rsquo;Espace, entre réalités scientifiques, et mythes qui ont essayé d&amp;rsquo;expliquer, avant que la Science ne s&amp;rsquo;en occupe, nos origines.Donc, plus que dormir, il faut voir ASpaceMR comme un véritable voyage vers les imaginaires, puisque même si nous touchons du doigt, humain pour La Lune, ou robotique pour Mars, nous ne sommes qu&amp;rsquo;une particule atomique dans le champ des possibles stellaires.Grâce aux musiques que j&amp;rsquo;ai sélectionné, le récit est emporté et vous transporte sans que vous le remarquiez.&lt;/p&gt;
+&lt;p&gt;La série audio s&amp;rsquo;écoute depuis Podcloud (j&amp;rsquo;allais dire, évidemment), et nous aurons terminé la publication de l&amp;rsquo;Acte 1 en date du Vendredi 12 Juillet 2019, acte qui comprend 7 épisodes.&lt;/p&gt;
+&lt;h2 id=&#34;crédits-généraux&#34;&gt;Crédits généraux&lt;/h2&gt;
+&lt;h4 id=&#34;une-co-production&#34;&gt;Une co-production&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Phil_Goud : Texte et narration&lt;/li&gt;
+&lt;li&gt;Redscape : Mise en musique, montage, mixage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;générique&#34;&gt;Générique&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Track : Euphotic&lt;/li&gt;
+&lt;li&gt;LP : &lt;em&gt;Interloper&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Artiste : Carbon Based Lifeforms&lt;/li&gt;
+&lt;li&gt;Année : 2015&lt;/li&gt;
+&lt;li&gt;Label : Blood Music&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;voix-du-générique&#34;&gt;Voix du générique&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/kikrine&#34;&gt;Karine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;crédit-artwork&#34;&gt;Crédit artwork&lt;/h4&gt;
+&lt;p&gt;Greg Rakozy &lt;a href=&#34;https://unsplash.com/photos/0LU4vO5iFpM&#34;&gt;https://unsplash.com/photos/0LU4vO5iFpM&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;le-podcast-est-disponible-sur-&#34;&gt;Le podcast est disponible sur :&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Podcloud&lt;/li&gt;
+&lt;li&gt;Apple Podcasts&lt;/li&gt;
+&lt;li&gt;Spotify&lt;/li&gt;
+&lt;li&gt;Deezer&lt;/li&gt;
+&lt;li&gt;Google Podcasts&lt;/li&gt;
+&lt;li&gt;Youtube&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Plus d&amp;rsquo;excuses pour venir &lt;em&gt;se reposer dans les étoiles&lt;/em&gt;&amp;hellip; :).&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Dérangements</title>
+      <link>https://blog.glarose.fr/posts/derangements/</link>
+      <pubDate>Tue, 05 Mar 2019 23:42:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/derangements/</guid>
+      <description>Ne vous dérangez pas. Je ne compte que passer.
+Non, je vous assure, ça n&amp;rsquo;est pas la peine.
+De la place ici ? Je m’assoirai bien volontiers. Couché ? OK. Ça ne me dérange pas. Comme je vous l&amp;rsquo;ai dit, je ne fais que passer de toute manière.
+Aller dans ce coin ? Ça va faire un peu étroit, mais je pense y rentrer. Là, c&amp;rsquo;est bon. Je suis calé. Heureusement que je ne suis pas plus enveloppé.</description>
+      <content>&lt;p&gt;Ne vous dérangez pas.
+Je ne compte que passer.&lt;/p&gt;
+&lt;p&gt;Non, je vous assure, ça n&amp;rsquo;est pas la peine.&lt;/p&gt;
+&lt;p&gt;De la place ici ? Je m’assoirai bien volontiers.
+Couché ? OK. Ça ne me dérange pas. Comme je vous l&amp;rsquo;ai dit, je ne fais que passer de toute manière.&lt;/p&gt;
+&lt;p&gt;Aller dans ce coin ? Ça va faire un peu étroit, mais je pense y rentrer.
+Là, c&amp;rsquo;est bon. Je suis calé. Heureusement que je ne suis pas plus enveloppé.J&amp;rsquo;accepte votre offrande, je ne vais pas m&amp;rsquo;imposer, ni vous imposer mon gêne, ma fierté, ma bienséance.&lt;/p&gt;
+&lt;p&gt;Aller dans ce trou ? Ma foi, je pourrai disparaître de votre vue.&lt;/p&gt;
+&lt;p&gt;Si ça me convient ? Si ça me convient ?Bien sûr, l&amp;rsquo;ombre, le noir, le sang, la violence, le froid, ce sont de belles choses.&lt;/p&gt;
+&lt;p&gt;Morbide ? Ah non du tout, c&amp;rsquo;est possible d&amp;rsquo;être ami avec la mort.
+J&amp;rsquo;y serai bien ? Oui, très bien, ne vous inquiétez pas, je sentirai encore plus vivant.
+Mourir ? Je me sens gêné de tenir tel conversation, cela doit être extrêmement ennuyeux pour vous de parler avec moi.
+Voilà, c&amp;rsquo;est fait, je suis gêné. C&amp;rsquo;est malin.&lt;/p&gt;
+&lt;p&gt;Qu&amp;rsquo;on m&amp;rsquo;écrase ? Oui, j&amp;rsquo;y pensais. Surtout, n&amp;rsquo;hésitez pas à mettre le maximum de poids sur ma tête, cela m&amp;rsquo;aidera à entrer dans ce trou.&lt;/p&gt;
+&lt;p&gt;Tout de même, il est plutôt serré, mais il sera parfait. Un peu d&amp;rsquo;aménagement et j&amp;rsquo;en serai un heureux propriétaire.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;autorisation pour m&amp;rsquo;appuyer sur la tête ? Allez, je vous en prie, vous n&amp;rsquo;avez pas besoin de mon autorisation d&amp;rsquo;habitude.
+Ou alors, je ne l&amp;rsquo;ai jamais remarqué.&lt;/p&gt;
+&lt;p&gt;Si ça fait mal ? Si ça fait mal ?
+Non, non, appuyez, je sens votre talon au sommet de ma cervelle. Écrasez bien surtout, il faut que ça fasse de la bouillie.
+Mon bras ? Un de plus, un de moins, cela m&amp;rsquo;est égal.
+J&amp;rsquo;ai un énorme trou dans la tête ?
+Ah, je n&amp;rsquo;avais pas remarqué. Je ne sens rien. C&amp;rsquo;est étrange.&lt;/p&gt;
+&lt;p&gt;Allez y, n&amp;rsquo;hésitez pas.&lt;/p&gt;
+&lt;p&gt;Allez y, appuyez.&lt;/p&gt;
+&lt;p&gt;Allez-y, enfoncez-moi.&lt;/p&gt;
+&lt;p&gt;Allez-y, ne vous arrêtez pas.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Je vous remercie. Ce fût agréable.
+Ce que je compte faire ? Je suis passé, je vous ai un peu dérangé, normalement, si tout va bien, nous ne nous reverrons plus.
+Il serait heureux de constater que nos chemins se séparent.
+J&amp;rsquo;espère néanmoins que vous avez passé un bon moment de détente.
+Il fût fort agréable pour moi.&lt;/p&gt;
+&lt;p&gt;Bon, eh bien, à bientôt, je n&amp;rsquo;hésiterai pas à venir vous déranger dans vos rêves débiles.
+Je ne ferai que passer, rassurez-vous.&lt;/p&gt;
+&lt;p&gt;Je vous mangerai un peu de cerveau, parce que ça creuse la route.
+Ne vous dérangez pas à ce moment là, j&amp;rsquo;irai me servir.&lt;/p&gt;
+&lt;p&gt;Ne soyez pas dérangé.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Redscape - 2018&lt;/em&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Quand je me suis mis à composer de la musique</title>
+      <link>https://blog.glarose.fr/posts/quand-je-me-suis-mis-a-composer-de-la-musique/</link>
+      <pubDate>Tue, 05 Mar 2019 12:54:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/quand-je-me-suis-mis-a-composer-de-la-musique/</guid>
+      <description>Ecrire du rap quand ça n&amp;rsquo;est pas dans vos habitudes, ça n&amp;rsquo;est vraiment pas facile.Composer et mixer un morceau non plus, ça n&amp;rsquo;est pas de la tarte.Néanmoins, comment résister à l&amp;rsquo;appel des Sondiers, ce podcast dédié à l&amp;rsquo;audionumérique, de faire une production sonore pour Noël ?
+C&amp;rsquo;est la 3ème fois que je participe à ce &amp;ldquo;concours&amp;rdquo;, et autant vous dire que mes 2 premiers sons étaient complètement différents de celui présenté cet année.</description>
+      <content>&lt;p&gt;Ecrire du rap quand ça n&amp;rsquo;est pas dans vos habitudes, ça n&amp;rsquo;est vraiment pas facile.Composer et mixer un morceau non plus, ça n&amp;rsquo;est pas de la tarte.Néanmoins, comment résister à l&amp;rsquo;appel des &lt;a href=&#34;https://lessondiers.com&#34;&gt;Sondiers&lt;/a&gt;, ce podcast dédié à l&amp;rsquo;audionumérique, de faire une production sonore pour Noël ?&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est la 3ème fois que je participe à ce &amp;ldquo;concours&amp;rdquo;, et autant vous dire que mes 2 premiers sons étaient complètement différents de celui présenté cet année. Jugeons ensemble de mon parcours.&lt;/p&gt;
+&lt;h2 id=&#34;première-année--ça-ne-devait-être-quune-blague&#34;&gt;Première année : ça ne devait être qu&amp;rsquo;une blague.&lt;/h2&gt;
+&lt;p&gt;J&amp;rsquo;ai présenté un morceau du style &amp;ldquo;EDM&amp;rdquo; (Electronic Dance Music, le genre le plus en vogue aujourd&amp;rsquo;hui, et que j’exècre pourtant).&lt;/p&gt;
+&lt;p&gt;Pour tout vous dire, je suis atteint comme nombre de compositeurs en herbe, je tourne très rapidement en rond sur une boucle musicale, sans pouvoir en sortir.&lt;/p&gt;
+&lt;p&gt;Tout est à base de samples provenant d&amp;rsquo;une chanson de François TJP (&amp;ldquo;Puissant Comme Un Tigre&amp;rdquo;, issue de sa fiction sonore &amp;ldquo;Les Aventuriers&amp;rdquo;).Pour les besoins de sa fiction sorti l&amp;rsquo;an dernier, &amp;ldquo;Les Aventuriers&amp;rdquo;, il a commis ceci:&lt;/p&gt;
+&lt;p&gt;(j&amp;rsquo;adore la pochette :))&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai rapidement découvert le potentiel caché d&amp;rsquo;un tel morceau, mais mes piètres talents de producteur m&amp;rsquo;a vite retiré l&amp;rsquo;idée de toucher à ce titre.&lt;/p&gt;
+&lt;p&gt;Et pourtant… Ça me brûlait littéralement les doigts. Après avoir lancé l&amp;rsquo;idée sur Twitter:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;J&amp;rsquo;ai commencé à m&amp;rsquo;attaquer à ce remix.Je voulais quelque chose de volontairement plus mainstream que ce que j&amp;rsquo;aurai eu l&amp;rsquo;habitude de produire.&lt;/p&gt;
+&lt;p&gt;3 versions plus tard et des mois plus tard, j&amp;rsquo;ai &lt;strong&gt;ENFIN&lt;/strong&gt; réussi à sortir quelque chose de mon DAW (&lt;em&gt;Digital Audio Workstation, ou station de travail audionumérique, comme Ableton Live, Cubase, Reaper&amp;hellip;&lt;/em&gt;), et dans les temps convenu par le concours des Sondiers.&lt;/p&gt;
+&lt;p&gt;Le découpage des samples a été plutôt simple (merci Ableton et sa fonction &amp;ldquo;Warp&amp;rdquo;), François TJP ayant simplifié les choses en chantant en rythme avec le beat. Le plus compliqué finalement, a été la réinvention complète d&amp;rsquo;une structure, en s&amp;rsquo;aidant des samples.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;ajout final, qui donne une touche plutôt tropical au morceau, vient d&amp;rsquo;un sample, qui, nettoyé, accéléré et modifié grâce à 2 effets, permet de donner du dynamisme à l&amp;rsquo;ensemble.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;François TJP - Puissant Comme Un Tigre (BinairBrain Remix)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A noter, une version énervée de Grushkov (Big City), à 10.000 lieues de ma version, très sympa à écouter dans un post écrit par François TJP, ici.&lt;/p&gt;
+&lt;p&gt;On est d&amp;rsquo;accord, c&amp;rsquo;est gentil, légèrement idiot ou carrément barré, c&amp;rsquo;est selon, mais surtout, il ne s&amp;rsquo;agit que d&amp;rsquo;un gros trip, je ne me suis pas pris au sérieux. Et en plus, ça reste dans la tête.&lt;/p&gt;
+&lt;h2 id=&#34;seconde-année--je-ne-suis-plus-là-pour-rigoler&#34;&gt;Seconde année : je ne suis plus là pour rigoler.&lt;/h2&gt;
+&lt;p&gt;Suivant les tournants qu&amp;rsquo;ont pris ma vie par la suite, j&amp;rsquo;ai commencé à sérieusement bidouiller du son, à le mettre en forme, pour sortir ce que j&amp;rsquo;avais dans la tête.C&amp;rsquo;est là qu&amp;rsquo;est né, de mon esprit &amp;ldquo;malade&amp;rdquo;, un &amp;ldquo;Centuries Fogs&amp;rdquo;, complètement IDM pour le coup, terriblement plus froid, sombre et maladif :&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;CynistrBrain - Centuries Fogs&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Le pari est réussi, et j&amp;rsquo;en reparlerai dans un prochain article, puisque ce morceau fait partie d&amp;rsquo;un projet qui verra très bientôt le jour.&lt;/p&gt;
+&lt;h2 id=&#34;troisième-année--jexplore-de-nouveaux-styles&#34;&gt;Troisième année : j&amp;rsquo;explore de nouveaux styles&lt;/h2&gt;
+&lt;p&gt;Et donc cette année ? Il fallait forcément se réinventer, s&amp;rsquo;essayer à autre chose. Un sample de piano en boucle, un beat fort, et un texte écrit sur le coup de la colère. Voilà comment est né &amp;ldquo;Mélancolie&amp;rdquo;, un rap contestataire, volontairement &amp;ldquo;enfonceur de portes ouvertes&amp;rdquo; mais qui correspondait à ce que je souhaitais exprimer à cette période : une rage, des actions, et une profonde mélancolie de ce qui nous entoure. Je vous en propose l&amp;rsquo;écoute :&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Morféüs - Mélancolie&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Je ne sais pas si j&amp;rsquo;ai réellement l&amp;rsquo;envie de continuer le rap. J&amp;rsquo;ai d&amp;rsquo;autres sons en composition, avec lesquels j&amp;rsquo;ai bien quelques idées de textes, mais rien de concret.&lt;/p&gt;
+&lt;p&gt;La production de morceaux me sied davantage que d&amp;rsquo;écrire un texte.Autant, le premier morceau n&amp;rsquo;était qu&amp;rsquo;un amusement (et je remercie François de m&amp;rsquo;avoir fourni les éléments sonores), mon évolution a été assez nette. Même si la musique doit être source d&amp;rsquo;amusement et d&amp;rsquo;humour, ce que j&amp;rsquo;ai dans la tête ne correspond pas toujours à cet état d&amp;rsquo;esprit. Les 2 dernières compositions le prouvent, ma musique n&amp;rsquo;est plus là pour rigoler, bien au contraire, elle doit raconter des histoires, se nourrir de l&amp;rsquo;existant, du présent et des gens qui m&amp;rsquo;entourent. Je ne renie bien évidemment pas mon premier morceau (surtout qu&amp;rsquo;il a été faite sous une contrainte de temps), mais ce temps est bel et bien révolu.&lt;/p&gt;
+&lt;p&gt;Place à la réflexion, l&amp;rsquo;introspection et la réflexion d&amp;rsquo;une époque qui va finir par nous échapper si nous ne faisons rien.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Redscape&lt;/strong&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Sombres désespoirs</title>
+      <link>https://blog.glarose.fr/posts/sombres-desespoirs/</link>
+      <pubDate>Mon, 04 Mar 2019 00:53:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/sombres-desespoirs/</guid>
+      <description>Une nappe grise me couvre la lumière qui peine à montrer le bout de son onde.
+Ne pas me réchauffer est son but, ne pas m&amp;rsquo;éclairer l&amp;rsquo;arrange.Je me sens vide, dépossédé, déconnecté, décontenancé, comme un étrange sentiment de malaise bien envahissant qui me rend nauséeux.
+Il est venu avec du monde ce malaise. Mes démons intérieurs, sont toujours présent pour l&amp;rsquo;accueillir. C&amp;rsquo;est une évidence.
+A quoi bon vivre, si je dois subir ce qui ne m&amp;rsquo;intéresse plus, une vie qui ne m&amp;rsquo;intéresse pas ?</description>
+      <content>&lt;p&gt;Une nappe grise me couvre la lumière qui peine à montrer le bout de son onde.&lt;/p&gt;
+&lt;p&gt;Ne pas me réchauffer est son but, ne pas m&amp;rsquo;éclairer l&amp;rsquo;arrange.Je me sens vide, dépossédé, déconnecté, décontenancé, comme un étrange sentiment de malaise bien envahissant qui me rend nauséeux.&lt;/p&gt;
+&lt;p&gt;Il est venu avec du monde ce malaise. Mes démons intérieurs, sont toujours présent pour l&amp;rsquo;accueillir. C&amp;rsquo;est une évidence.&lt;/p&gt;
+&lt;p&gt;A quoi bon vivre, si je dois subir ce qui ne m&amp;rsquo;intéresse plus, une vie qui ne m&amp;rsquo;intéresse pas ? Laisser crever ces humains, oui c&amp;rsquo;est ce que je voudrais. Si seulement j&amp;rsquo;avais le courage de disparaître.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Mais je ne l&amp;rsquo;ai pas. Enfin pas tout de suite.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Me sentir coupable de tout, et pas du tout. Ne pas être satisfait, ne jamais l&amp;rsquo;être, ne plus se complaire dans l&amp;rsquo;autosuffisance.&lt;/p&gt;
+&lt;p&gt;Aller dans le mur, puissants ou pauvres, la sentence sera irrévocable, elle ne pourra dévier de sa route, elle sera coincé dans sa quête. Je ferai partie de âmes, perdues, mais révoltés.&lt;/p&gt;
+&lt;p&gt;Une vie que je n&amp;rsquo;ai pas choisi, imposé. Pas de places dans ce monde, je ne me sens pas à ma place. Le confort n&amp;rsquo;est plus une priorité.&lt;/p&gt;
+&lt;p&gt;Place à la spiritualité pour tenter de tuer ces moribondes pensées.Un désir d&amp;rsquo;éternité pour sauver ce qui peut l&amp;rsquo;être, un désir d&amp;rsquo;enfumer tous les autres en leur disant : je vous l&amp;rsquo;avais bien dit, mais vous ne m&amp;rsquo;avez pas écouté.Se croire plus fort que l&amp;rsquo;autre, complaire l&amp;rsquo;autre dans l&amp;rsquo;ignorance crasse, la bêtise sociale, espèce de chimère, tu dois fermer ta gueule, ta destruction sera grandiose et peuplés de schizophrènes, effrayants de vulgarités &lt;em&gt;entre des culs tordus et desseins déchirés&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Le combat qui m&amp;rsquo;anime n&amp;rsquo;en est plus un. L&amp;rsquo;ennui est une amie, je te la présente, elle me conseille de ne rien faire. Surprenant.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est un billet aux longues allées. Pas de maisons bleus, ni de collines. Silence, blanc. Bruit. Blanc. Sens. Blanc. &lt;strong&gt;Croc. Rouge&lt;/strong&gt;.Un sang qui ne s&amp;rsquo;écoule plus, froid, glacial, noir, épineux, épais, &lt;strong&gt;sale&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Salir le blanc immaculé, sentir la chaleur de l&amp;rsquo;air glacial. S&amp;rsquo;envelopper, s&amp;rsquo;énivrer de ce paysage. Sensation de dépaysement garanti. Oh tu saignes m&amp;rsquo;as tu dit.Certes, mais je m&amp;rsquo;en fiche de ton ressenti.&lt;/p&gt;
+&lt;p&gt;Je me gaufre dans ces photos. J&amp;rsquo;aimerai en être. Créer un véritable moi intérieur, le véritable, se complaire dans le silence.&lt;/p&gt;
+&lt;p&gt;De mort ? Non. Le plus vivant des silences, d&amp;rsquo;une nature. Pas endormi. Oh non. Elle n&amp;rsquo;est que trop vivante. Devenir un flocon. Un joli flocon. Encore un adjectif de merde.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Un flocon.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Le silence des espaces. Une maison en bois. Des millions de morceaux ambient. Des siècles de contemplation pour explorer la nature humaine.Mais pourquoi faire ? La nature suffit. Laissons l&amp;rsquo;humaine de côté.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Retour à la réalité.Mon esprit a vagabondé.Mais je suis toujours seul, à traîner une charge mentale.&lt;/p&gt;
+&lt;p&gt;Bancal et fatal.&lt;/p&gt;
+&lt;p&gt;Barbare et foetale.&lt;/p&gt;
+&lt;p&gt;Baccanal et Fécale.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Le silence éternel de ces espaces infinis m&amp;rsquo;effraie.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Blaise Pascal, 1669&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Redscape.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Ouverture de mon blog</title>
+      <link>https://blog.glarose.fr/posts/ouverture-de-mon-blog/</link>
+      <pubDate>Sat, 02 Mar 2019 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/ouverture-de-mon-blog/</guid>
+      <description>Et comme d&amp;rsquo;habitude, ça n&amp;rsquo;a pas été une mince affaire.
+Dans la vie, on regrette énormément de choses. Parce que le temps fait son œuvre, je passe mon temps à regretter un tas de choses comme le fait de ne pas savoir coder par exemple. J’ai beau travailler dans l’informatique, être passionné par la chose, il n’empêche que je n’arrive pas à me mettre sérieusement au code. Je m’intéresse pourtant à tout ce qui se passer sur les langages.</description>
+      <content>&lt;p&gt;Et comme d&amp;rsquo;habitude, ça n&amp;rsquo;a pas été une mince affaire.&lt;/p&gt;
+&lt;p&gt;Dans la vie, on regrette énormément de choses. Parce que le temps fait son œuvre, je passe mon temps à regretter un tas de choses comme le fait de ne pas savoir coder par exemple. J’ai beau travailler dans l’informatique, être passionné par la chose, il n’empêche que je n’arrive pas à me mettre sérieusement au code. Je m’intéresse pourtant à tout ce qui se passer sur les langages. On me parle, par exemple, d’AngularJS, je sais à peu près à quoi m’attendre. Mais une fois la motivation de se dire “j’y vais, je veux coder”, je me suis souvent retrouver devant une solitude, celle qui vous prends aux tripes et vous empêche d’avancer plus loin.&lt;/p&gt;
+&lt;p&gt;Ca a été le cas avec Python. Quel rapport avec ce blog ? Le moteur ! Pelican, générateur de sites statiques, est écrit en Python. Python, tout le monde le connaît, l’un des langages les plus plébiscités et très populaires auprès de ceux qui veulent apprendre le code. Et ça fait donc quelques 5 années que j’essaie de m’y mettre. Alors bien sûr, ça n’est pas avec ce blog que je vais m’y mettre. D&amp;rsquo;autant plus que les plus aguerris auront remarqué que ça n&amp;rsquo;est pas Pelican qui propulse ce blog.&lt;/p&gt;
+&lt;p&gt;Pour en revenir à ce sujet, faire son site en le concevant presque de A à Z a quelque chose de jouissif. J’ai failli abandonner plus d’une fois, mais ma curiosité m’a amené toujours plus loin.&lt;/p&gt;
+&lt;p&gt;Alors que ce blog était lancé sous Pelican et avec une autre URL, j’ai commencé quelques lectures autour d’Hugo, autre moteur de sites statiques.J’ai tenté l’aventure, et j’ai été immédiatement conquis. Il y a chez Hugo quelque chose de bien plus intuitif que sur Pelican.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Mais quelque chose me manquait.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;aspect &lt;em&gt;instantanéité&lt;/em&gt; présent derrière tout ce que je produis, parce que pour faire un site statique, vous devez regénérer votre blog. Alors pourquoi pas, mais là, tout de suite, je n&amp;rsquo;en avais plus l&amp;rsquo;envie.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est pourquoi j&amp;rsquo;ai fini par atterir sur Ghost, qui, la dernière fois que j&amp;rsquo;y avais touché, m&amp;rsquo;avait laissé un goût amer dans la bouche.&lt;/p&gt;
+&lt;p&gt;Mais aujourd&amp;rsquo;hui, changement de stratégie. Je me suis plongé dans les méandres de Docker, dont je repoussais sans cesse l&amp;rsquo;étude.&lt;/p&gt;
+&lt;p&gt;Je suis dans une période de questionnements, qui a failli faire voler en éclats mon hébergement que j&amp;rsquo;administre sur un Kimsufi que je loue.Au lieu de multiplier les produits en ligne (et les premiums qui vont avec), j&amp;rsquo;ai préféré terminer une configuration solide de mon serveur. C&amp;rsquo;est comme cela que le blog, qui devait être à côté du site des Abyssales (sur un hébergement mutualisé OVH), s&amp;rsquo;est retrouvé sur le Kimsufi. Grâce à Docker, et même si j&amp;rsquo;ai galéré à le configurer, l&amp;rsquo;ensemble est lancé dans un container, sans rien faire d&amp;rsquo;autre.&lt;/p&gt;
+&lt;p&gt;Je suis particulièrement intéressé par cette technologie, et je compte aller beaucoup plus loin. Cependant, pas de précipitation, je regarde déjà comment Ghost se comporte, ainsi que &lt;strong&gt;&lt;a href=&#34;https://bitwarden.com/&#34;&gt;Bitwarden&lt;/a&gt;&lt;/strong&gt;. C&amp;rsquo;est le petit nouveau de la bande. Cela fait au bas mot 5 ans que je tourne avec Keepass, mais quelque chose m&amp;rsquo;a attiré dans Bitwarden, un côté plus moderne, multiplateforme, codé de façon plus propre si l&amp;rsquo;envie me vient un jour de passer en full Linux.Lui aussi s&amp;rsquo;est fait &amp;ldquo;dockerisé&amp;rdquo; par mes soins. Je dois simplement régler un menu détail de port que je dois faire afficher après l&amp;rsquo;URL. Rien de grave.&lt;/p&gt;
+&lt;p&gt;Bref, ce sont de nouvelles perspectives qui s&amp;rsquo;ouvrent devant moi. Malgré les doutes, je tiens bon le cap de l&amp;rsquo;hébergement, j&amp;rsquo;y crois toujours au fond de moi, mais il faut que j&amp;rsquo;y mette les gardes fous nécessaires. Entre ma vie professionnelle, dont l&amp;rsquo;informatique n&amp;rsquo;est malheureusement plus une priorité, faute de missions intéressantes, et ma vie personnelle, plus axé sur la famille, les occasions de tout lâcher sont nombreuses. Et pourtant, mes périodes de sérénité se trouvent être dans ces moments où je sais que tout est centralisé à mes côté, et pas de l&amp;rsquo;autre côté de l&amp;rsquo;Atlantique.&lt;/p&gt;
+&lt;h2 id=&#34;que-va-t-on-trouver-sur-ce-blog-&#34;&gt;Que va-t-on trouver sur ce blog ?&lt;/h2&gt;
+&lt;p&gt;Un fourre tout. Ca n&amp;rsquo;est pas bien original, mais c&amp;rsquo;est la meilleure expression de ce que je souhaite y mettre.Ce blog, ce nouvel espace, signifie également la fin de mon compte Facebook, que je n&amp;rsquo;utilise plus depuis de nombreux mois mais qui continuait à rester actif.Il est simplement désactivé, j&amp;rsquo;attends de contacter certaines personnes dans le cadre de mon activité musicale pour le supprimer définitivement.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est une réaction à tous les scandales qui émaillent ce réseau social, mais c&amp;rsquo;est aussi et surtout parce que je ne l&amp;rsquo;utilise pas et n&amp;rsquo;en vois pas l&amp;rsquo;utilité. Quand je vois mon entourage scroller à l&amp;rsquo;infini cette timeline, et à m&amp;rsquo;en rapporter des faits aussi abjects, je me dis à chaque seconde que mon choix est le bon.&lt;/p&gt;
+&lt;p&gt;Je reste sur &lt;a href=&#34;https://twitter.com/redscape_tech&#34;&gt;Twitter&lt;/a&gt;, après avoir épuré ma timeline. Pas assez à mon goût, je peux certainement redescendre d&amp;rsquo;un cran.J&amp;rsquo;hésite à revenir sur Mastodon, je crains de ne devoir suivre que les mêmes libristes qui s&amp;rsquo;épanchent sur leur distribution à-la-con, sans jamais se remettre en question. Bref, le libriste de base, il est beau, il est gentil, et ça me les casse bien comme il faut.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDIT 05/03/2019 :&lt;/strong&gt; J&amp;rsquo;y ai refais un petit tour, et clairement non, ça ne va pas le faire. Trop loin de mes préoccupations quotidiennes. J&amp;rsquo;essaie de changer à mon niveau le monde qui m&amp;rsquo;entoure, je n&amp;rsquo;ai aps envie qu&amp;rsquo;on me culpabilise à longueur de temps. Décidemment, ce réseau social n&amp;rsquo;est pas fait pour moi, je n&amp;rsquo;y trouve aucun intérêt.&lt;/p&gt;
+&lt;p&gt;Vous pourrez y lire des fictions que je stocke depuis des années sur mon disque dur, des articles de vulgarisation techniques, des billets d&amp;rsquo;humeurs, etc&amp;hellip; Bref de quoi boire et manger pendant un petit temps.&lt;/p&gt;
+&lt;p&gt;Vous pourrez suivre mes aventures à travers mon streetcast, &lt;a href=&#34;http://letrajet.lepodcast.fr/&#34;&gt;&lt;strong&gt;Le Trajet&lt;/strong&gt;&lt;/a&gt;, et vous abonner avec le &lt;a href=&#34;feed://letrajet.lepodcast.fr/rss&#34;&gt;flux RSS&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/images/2019/03/Pochette_v2.jpg&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Je prépare un épisode 02 qui sortira dans les prochaines semaines, c&amp;rsquo;est en cours d&amp;rsquo;enregistrement.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;écris également une série audio inédite, j&amp;rsquo;espère vous en dire plus dans les prochaines semaines qui, vous l&amp;rsquo;aurez compris, seront immanquablement chargées.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;En attendant, bienvenue sur ce blog.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Redscape.&lt;/p&gt;
+&lt;p&gt;PS : la peinture est extrêmement fraîche, à tel point que certains liens renvoie vers localhost et le port de Ghost. Ca sera (je l&amp;rsquo;espère) rétabli dans les prochains jours.&lt;strong&gt;EDIT 05/03/2019 :&lt;/strong&gt; Tout est rentré dans l&amp;rsquo;ordre, une mauvaise configuration de l&amp;rsquo;ensemble Docker+Ghost a fait que les liens ne poitaient pas vers l&amp;rsquo;URL officiel.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Bonne navigation.&lt;/em&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

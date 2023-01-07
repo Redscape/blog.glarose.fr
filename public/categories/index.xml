@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on RDSCP Blog</title>
+    <link>https://blog.glarose.fr/categories/</link>
+    <description>Recent content in Categories on RDSCP Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2022 Gh15L1</copyright>
+    <lastBuildDate>Tue, 30 Nov 2021 23:00:00 +0000</lastBuildDate><atom:link href="https://blog.glarose.fr/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech</title>
+      <link>https://blog.glarose.fr/categories/tech/</link>
+      <pubDate>Tue, 30 Nov 2021 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/tech/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Humeur</title>
+      <link>https://blog.glarose.fr/categories/humeur/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/humeur/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Podcasts</title>
+      <link>https://blog.glarose.fr/categories/podcasts/</link>
+      <pubDate>Tue, 26 Oct 2021 01:25:00 +0200</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/podcasts/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Musique</title>
+      <link>https://blog.glarose.fr/categories/musique/</link>
+      <pubDate>Sun, 18 Aug 2019 22:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/musique/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Histoires</title>
+      <link>https://blog.glarose.fr/categories/histoires/</link>
+      <pubDate>Tue, 05 Mar 2019 23:42:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/histoires/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://blog.glarose.fr/categories/blog/</link>
+      <pubDate>Tue, 05 Mar 2019 12:54:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/blog/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Histoire</title>
+      <link>https://blog.glarose.fr/categories/histoire/</link>
+      <pubDate>Mon, 04 Mar 2019 00:53:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/categories/histoire/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>

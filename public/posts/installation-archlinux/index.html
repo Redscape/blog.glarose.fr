@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Une installation d&#39;ArchLinux en moins de 30 minutes, c&#39;est possible ! :: RDSCP Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vous l&amp;rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.
+J&#39;aime ces ambiances. Et prends toi une grosse image à charger au passage.Ceci dit, la photo est assez raccord avec le temps actuel.
+Alors, on va sortir un peu de tout ça et parler tech ! A l&amp;rsquo;occasion, si jamais j&amp;rsquo;ai de l&amp;rsquo;inspiration, j&amp;rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&amp;rsquo;aimerais bien partager." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.glarose.fr/posts/installation-archlinux/" />
+
+
+
+
+<link rel="stylesheet" href="https://blog.glarose.fr/assets/style.css">
+
+  <link rel="stylesheet" href="https://blog.glarose.fr/assets/red.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://blog.glarose.fr/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://blog.glarose.fr/img/favicon/favicon_blog.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="https://twitter.com/redscape_music" />
+  
+    <meta name="twitter:creator" content="redscape_tech" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Une installation d&#39;ArchLinux en moins de 30 minutes, c&#39;est possible !">
+<meta property="og:description" content="Vous l&amp;rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.
+J&#39;aime ces ambiances. Et prends toi une grosse image à charger au passage.Ceci dit, la photo est assez raccord avec le temps actuel.
+Alors, on va sortir un peu de tout ça et parler tech ! A l&amp;rsquo;occasion, si jamais j&amp;rsquo;ai de l&amp;rsquo;inspiration, j&amp;rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&amp;rsquo;aimerais bien partager." />
+<meta property="og:url" content="https://blog.glarose.fr/posts/installation-archlinux/" />
+<meta property="og:site_name" content="RDSCP Blog" />
+
+  <meta property="og:image" content="https://blog.glarose.fr/img/arch.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+  <meta property="article:section" content="Tech" />
+
+
+  <meta property="article:published_time" content="2021-11-30 23:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="red">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Redscape blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/a-propos">A Propos</a></li>
+        
+      
+        
+          <li><a href="https://aspacemr.fr">ASpaceMR</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="https://gitlab.com/redscapedev">Gitlab</a></li>
+        
+      
+        
+          <li><a href="https://lesabyssales.redscapemusic.com">Les Abyssales</a></li>
+        
+      
+        
+          <li><a href="/podcasts">Podcasts</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Voir plus ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="https://twitter.com/redscape_tech">Twitter</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/a-propos">A Propos</a></li>
+      
+    
+      
+        <li><a href="https://aspacemr.fr">ASpaceMR</a></li>
+      
+    
+      
+        <li><a href="/contact">Contact</a></li>
+      
+    
+      
+        <li><a href="https://gitlab.com/redscapedev">Gitlab</a></li>
+      
+    
+      
+        <li><a href="https://lesabyssales.redscapemusic.com">Les Abyssales</a></li>
+      
+    
+      
+        <li><a href="/podcasts">Podcasts</a></li>
+      
+    
+      
+        <li><a href="https://twitter.com/redscape_tech">Twitter</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://blog.glarose.fr/posts/installation-archlinux/">Une installation d&rsquo;ArchLinux en moins de 30 minutes, c&rsquo;est possible !</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-11-30
+        
+      </span>
+    
+    
+      <span class="post-author">:: Redscape</span>
+    
+    
+      <span class="post-reading-time">:: 6 min read (1154 words)</span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://blog.glarose.fr/tags/tech/">Tech</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="https://blog.glarose.fr/img/arch.png" class="post-cover" alt="Une installation d&#39;ArchLinux en moins de 30 minutes, c&#39;est possible !" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Vous l&rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.</p>
+
+  <figure class="left" >
+    <img src="/img/michael-mouritz-WXX_DhjlmD4-unsplash.jpg"   />
+    
+      <figcaption class="center" >J'aime ces ambiances. Et prends toi une grosse image à charger au passage.</figcaption>
+    
+  </figure>
+
+
+<p>Ceci dit, la photo est assez raccord avec le temps actuel.</p>
+<p>Alors, on va sortir un peu de tout ça et parler tech !
+A l&rsquo;occasion, si jamais j&rsquo;ai de l&rsquo;inspiration, j&rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&rsquo;aimerais bien partager.</p>
+<p>BREF.</p>
+<p>Aujourd&rsquo;hui, retour, en quelque sorte, aux sources.</p>
+<p>Retour sur mon retour sur Archlinux&hellip; 
+Il y a tant de choses à dire sur cet OS, qui attire autant les archifans que les haters.
+Il y a aussi <a href="https://music.apple.com/fr/album/the-elite/1457603296?i=1457603297">The Elite</a> (oui, je mets du hardstyle, parce que je n&rsquo;ai pas peur du mauvais goût) qui vouent à cet OS un culte sans fin, traitant allègrement les autres de gros noobs (si, si, allez faire un tour sur <a href="https://reddit.com/r/archlinux">Reddit</a>). Que voulez-vous, le monde des OS Linux peut tout autant se révéler le merveilleux quand on souhaite l&rsquo;utiliser, mais tout aussi imbécile quand le prosélytisme y est pratiqué.</p>
+<p>Donc ici, point de critiques sur d&rsquo;autres OS, chacun fait ce qu&rsquo;il veut.</p>
+<p>Alors, qu&rsquo;est ce qui m&rsquo;a conduit à mettre Arch sur ma machine de boulot ?</p>
+<p>Je me suis aperçu au fur et à mesure des missions confiés par mon ESN que Linux me serait plus utile que Windows (spoiler : sans blague ?!)</p>
+<p><em>(Parenthèse, avant de continuer : je sais que l&rsquo;on dit GNU/Linux et non pas Linux, mais j&rsquo;ai la flemme.)</em></p>
+<p>J&rsquo;ai donc installé tour à tour 2 OS, Ubuntu puis Fedora, et puis j&rsquo;ai fait la moue. 
+Mouais. 
+Ca marche hein, mais ça n&rsquo;est pas bandant. Comme Windows en fait. Et fait étonnant, des bugs ! Rien à voir avec ceux que j&rsquo;ai connu il y a 15 ans, quand j&rsquo;ai commencé à toucher mon 1er Linux (Ubuntu 7.04), mais bordel, la sortie de veille, quand même.
+Côté DM, comme je suis connu pour être original, je suis parti sur GNOME, plus parce que je le connaissais que par choix esthétique. 
+Sauf que j&rsquo;ai remarqué une étange sensation de lourdeur. Il est vrai que GNOME transporte avec lui foultitude de logiciel, et qu&rsquo;il peut devenir pachyderme, avant même de faire quelque chose de sa session. C&rsquo;est autant le cas sur Ubuntu que sur Fedora.</p>
+<p>Alors, le week-end dernier (je finis de rédiger ce billet Mardi 30 Novembre 2021), il faisait moche, et je me suis souvenu de 2 choses :</p>
+<ul>
+<li>ça faisait longtemps que je ne m&rsquo;étais pas pris la tête à installer un truc badass-compliqué.</li>
+<li>je ne me souviens plus de la 2ème raison.</li>
+</ul>
+<p>Ca tombe bien, Next Inpact en a fait <a href="https://www.nextinpact.com/article/49005/installer-simplement-arch-linux-cest-possible">un article dis donc</a> ! 
+La mission : tuer Windows pour faire redéclarer ma flamme à Linux.</p>
+
+  <figure class="left" >
+    <img src="/img/la_flamme_5f6a012978534_0.webp"   />
+    
+      <figcaption class="center" >Je n'ai toujours pas honte, oui j'ai aimé cette série.</figcaption>
+    
+  </figure>
+
+
+<p>Cependant, 7 ans que je ne l&rsquo;avais plus installé cet Arch, rouillé je l&rsquo;étais, mais bizarrement, toujours aussi excité.</p>
+<p>L&rsquo;article de NXi nous apprends qu&rsquo;un nouvel outil, <code>archinstall</code>, est désormais disponible pour simplifier l&rsquo;installation. Le moins que l&rsquo;on puisse dire, c&rsquo;était que j&rsquo;étais loin d&rsquo;imaginer à quel point le mot &ldquo;simple&rdquo; allait être aussi respecté au pied de la lettre. La capacité de cet outil pour installer un système &ldquo;aussi&rdquo; complexe (faut pas déconner, j&rsquo;ai l&rsquo;impression d&rsquo;être un connard d&rsquo;élitiste) tiendrait presque de la magie si je n&rsquo;étais pas informaticien. 
+Sans rire, il m&rsquo;a fallu 10 minutes entre le temps où j&rsquo;ai entré la commande dans l&rsquo;installeur d&rsquo;Arch et le moment où GNOME m&rsquo;a accueilli. 
+C&rsquo;est stupéfiant. C&rsquo;est même plus rapide qu&rsquo;une installation d&rsquo;Ubuntu ou Fedora.</p>
+<p>L&rsquo;outil, construit en Python, pose quelques questions, comme le zone temporel, le disque à utiliser et son partitionnement, le type de machine que vous souhaitez avoir entre minimal, server, desktop, et quelques autres questions que je vous laisserai le soin de découvrir (si je n&rsquo;avais pas la flemme, je vous aurai mis quelques captures, veuillez excuser l&rsquo;auteur).
+Et ensuite, y&rsquo;a plus qu&rsquo;à attendre.</p>
+
+  <figure class="left" >
+    <img src="/img/pub-zelda-III.jpg"   />
+    
+      <figcaption class="center" >Parce que j'ai envie.</figcaption>
+    
+  </figure>
+
+
+<p>10 petites minutes plus tard (qui ne m&rsquo;auront pas fait devenir squelette), on a le droit à l&rsquo;écran de login de GNOME et surtout à un bureau propre et épuré, sans aucun ajout superflu. Bien sûr il manque un tas de choses, mais c&rsquo;est à vous d&rsquo;apporter les paquets, grâce au célèbre <code>pacman</code>, mais également à <a href="https://aur.archlinux.org">AUR`</a> permettant d&rsquo;obtenir ainsi une bibliothèque quasiment illimité (attention quand même, ce sont des paquets communautaires, ne provenant pas de l&rsquo;équipe derrière Archlinux, à vos chats, risques et périls).</p>
+<p>On peut se construire un environnement sur-mesure, sans avoir de logiciels ou de dépendances inutiles. Pour ma part, il a été facile de retrouver mes logiciels favoris, dont le Visual Studio Code que j&rsquo;affectionne tant et dans lequel j&rsquo;ai écrit ce billet. 
+Oui, je sais, vous êtes en train de vous étrangler, cet exemple est valable uniquement dans le cadre de ce billet.
+Il est marrant de voir que c&rsquo;est un logiciel Microsoft que j&rsquo;installe en premier sur un Linux. Tout comme Edge d&rsquo;ailleurs. Naaaan, je déconne.</p>
+<p>En vrai, la situation a vraiment changé en 10 ans, époque à laquelle j&rsquo;animais <a href="https://enfluxlibre.lepodcast.fr">une émission sur le logiciel libre</a>&hellip; Ce temps semble désormais totalement révolu.</p>
+
+  <figure class="left" >
+    <img src="/img/steve-ballmer-microsoft-offers-best-both-worlds-windows-8.jpg"   />
+    
+      <figcaption class="center" >VF = Coucou Steve ! Version j'en n'ai rien péter = Coucou connard !</figcaption>
+    
+  </figure>
+
+
+<p>Mais je crois que ce qui m&rsquo;avait tant manqué sous Windows, c&rsquo;est la personnalisation. Je peux avoir un environnement de bureau utilisant les codes de couleur que l&rsquo;on appelle <a href="https://nordtheme.com">Nord</a> permettant d&rsquo;avoir une ambiance sombre et bleuté, très en vogue en ce moment et surtout, agréable à l&rsquo;oeil.</p>
+<p>Alors, désormais qu&rsquo;Arch est revenu sur une machine chez moi, quel bilan en tirer ?
+Pour le moment, je redécouvre. J&rsquo;aurai plus de recul dans 1 mois, et surtout, un retour complet en utilisation dans le cadre du travail.</p>
+<p>Je crains, comme il y a 7 ans, les <code>pacman -Syu</code> qui casserait tout le système, mais je suis bien moins casse-cou qu&rsquo;à l&rsquo;époque. Surtout, je remarque que l&rsquo;envie d&rsquo;aller voir ailleurs se fait moins en moins pressant. Le distro-hopping que je ne fais plus depuis des années y joue pour beaucoup. La volonté d&rsquo;avoir une machine de prod fonctionnel, et le fait que Windows, ça ne se bidouille pas, auront eu raison de mon impatience de l&rsquo;époque.</p>
+<p>Et j&rsquo;aime à me rassurer (oui, j&rsquo;ai toujours eu un problème d&rsquo;aimer Linux, alors je me rassure^^) en me disant que Windows est toujours installé sur ma bécane principale et qu&rsquo;il est hors de question de la passer sous Linux.
+Le pragmatisme est une bonne conseillière&hellip;
+Non, la multiplicité des OS, c&rsquo;est aussi avoir la curiosité, sans prosélytisme, de faire ce que j&rsquo;ai envie.</p>
+<p>Le fait d&rsquo;avoier Linux, c&rsquo;est aussi une manière pour moi de reboucler mon histoire avec le pingouin, et surtout, de commencer ma transition vers l&rsquo;ops (coucou <a href="https://www.wescale.fr">WeScale</a> !).</p>
+<p>En attendant, un jour, de partir sur Mac :)&hellip;</p>
+<p>Naaan, je déconne.</p>
+<p>Quoique.</p>
+<p><em>Redscape</em></p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Lire d&#39;autres posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://blog.glarose.fr/posts/solitude/">
+                <span class="button__text">Solitude</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2022 Gh15L1</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://blog.glarose.fr/assets/main.js"></script>
+<script src="https://blog.glarose.fr/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

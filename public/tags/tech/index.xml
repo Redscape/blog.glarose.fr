@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on RDSCP Blog</title>
+    <link>https://blog.glarose.fr/tags/tech/</link>
+    <description>Recent content in Tech on RDSCP Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2022 Gh15L1</copyright>
+    <lastBuildDate>Tue, 30 Nov 2021 23:00:00 +0000</lastBuildDate><atom:link href="https://blog.glarose.fr/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Une installation d&#39;ArchLinux en moins de 30 minutes, c&#39;est possible !</title>
+      <link>https://blog.glarose.fr/posts/installation-archlinux/</link>
+      <pubDate>Tue, 30 Nov 2021 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.glarose.fr/posts/installation-archlinux/</guid>
+      <description>Vous l&amp;rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.
+J&#39;aime ces ambiances. Et prends toi une grosse image à charger au passage.Ceci dit, la photo est assez raccord avec le temps actuel.
+Alors, on va sortir un peu de tout ça et parler tech ! A l&amp;rsquo;occasion, si jamais j&amp;rsquo;ai de l&amp;rsquo;inspiration, j&amp;rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&amp;rsquo;aimerais bien partager.</description>
+      <content>&lt;p&gt;Vous l&amp;rsquo;aurez remarqué, ce blog, et bien, oui, il est un peu sombre.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/michael-mouritz-WXX_DhjlmD4-unsplash.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;J&#39;aime ces ambiances. Et prends toi une grosse image à charger au passage.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Ceci dit, la photo est assez raccord avec le temps actuel.&lt;/p&gt;
+&lt;p&gt;Alors, on va sortir un peu de tout ça et parler tech !
+A l&amp;rsquo;occasion, si jamais j&amp;rsquo;ai de l&amp;rsquo;inspiration, j&amp;rsquo;en ferai un blog à part, mon logiciel de notes commençant à être rempli de trucs, astuces, que j&amp;rsquo;aimerais bien partager.&lt;/p&gt;
+&lt;p&gt;BREF.&lt;/p&gt;
+&lt;p&gt;Aujourd&amp;rsquo;hui, retour, en quelque sorte, aux sources.&lt;/p&gt;
+&lt;p&gt;Retour sur mon retour sur Archlinux&amp;hellip; 
+Il y a tant de choses à dire sur cet OS, qui attire autant les archifans que les haters.
+Il y a aussi &lt;a href=&#34;https://music.apple.com/fr/album/the-elite/1457603296?i=1457603297&#34;&gt;The Elite&lt;/a&gt; (oui, je mets du hardstyle, parce que je n&amp;rsquo;ai pas peur du mauvais goût) qui vouent à cet OS un culte sans fin, traitant allègrement les autres de gros noobs (si, si, allez faire un tour sur &lt;a href=&#34;https://reddit.com/r/archlinux&#34;&gt;Reddit&lt;/a&gt;). Que voulez-vous, le monde des OS Linux peut tout autant se révéler le merveilleux quand on souhaite l&amp;rsquo;utiliser, mais tout aussi imbécile quand le prosélytisme y est pratiqué.&lt;/p&gt;
+&lt;p&gt;Donc ici, point de critiques sur d&amp;rsquo;autres OS, chacun fait ce qu&amp;rsquo;il veut.&lt;/p&gt;
+&lt;p&gt;Alors, qu&amp;rsquo;est ce qui m&amp;rsquo;a conduit à mettre Arch sur ma machine de boulot ?&lt;/p&gt;
+&lt;p&gt;Je me suis aperçu au fur et à mesure des missions confiés par mon ESN que Linux me serait plus utile que Windows (spoiler : sans blague ?!)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Parenthèse, avant de continuer : je sais que l&amp;rsquo;on dit GNU/Linux et non pas Linux, mais j&amp;rsquo;ai la flemme.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai donc installé tour à tour 2 OS, Ubuntu puis Fedora, et puis j&amp;rsquo;ai fait la moue. 
+Mouais. 
+Ca marche hein, mais ça n&amp;rsquo;est pas bandant. Comme Windows en fait. Et fait étonnant, des bugs ! Rien à voir avec ceux que j&amp;rsquo;ai connu il y a 15 ans, quand j&amp;rsquo;ai commencé à toucher mon 1er Linux (Ubuntu 7.04), mais bordel, la sortie de veille, quand même.
+Côté DM, comme je suis connu pour être original, je suis parti sur GNOME, plus parce que je le connaissais que par choix esthétique. 
+Sauf que j&amp;rsquo;ai remarqué une étange sensation de lourdeur. Il est vrai que GNOME transporte avec lui foultitude de logiciel, et qu&amp;rsquo;il peut devenir pachyderme, avant même de faire quelque chose de sa session. C&amp;rsquo;est autant le cas sur Ubuntu que sur Fedora.&lt;/p&gt;
+&lt;p&gt;Alors, le week-end dernier (je finis de rédiger ce billet Mardi 30 Novembre 2021), il faisait moche, et je me suis souvenu de 2 choses :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ça faisait longtemps que je ne m&amp;rsquo;étais pas pris la tête à installer un truc badass-compliqué.&lt;/li&gt;
+&lt;li&gt;je ne me souviens plus de la 2ème raison.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ca tombe bien, Next Inpact en a fait &lt;a href=&#34;https://www.nextinpact.com/article/49005/installer-simplement-arch-linux-cest-possible&#34;&gt;un article dis donc&lt;/a&gt; ! 
+La mission : tuer Windows pour faire redéclarer ma flamme à Linux.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/la_flamme_5f6a012978534_0.webp&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Je n&#39;ai toujours pas honte, oui j&#39;ai aimé cette série.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Cependant, 7 ans que je ne l&amp;rsquo;avais plus installé cet Arch, rouillé je l&amp;rsquo;étais, mais bizarrement, toujours aussi excité.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;article de NXi nous apprends qu&amp;rsquo;un nouvel outil, &lt;code&gt;archinstall&lt;/code&gt;, est désormais disponible pour simplifier l&amp;rsquo;installation. Le moins que l&amp;rsquo;on puisse dire, c&amp;rsquo;était que j&amp;rsquo;étais loin d&amp;rsquo;imaginer à quel point le mot &amp;ldquo;simple&amp;rdquo; allait être aussi respecté au pied de la lettre. La capacité de cet outil pour installer un système &amp;ldquo;aussi&amp;rdquo; complexe (faut pas déconner, j&amp;rsquo;ai l&amp;rsquo;impression d&amp;rsquo;être un connard d&amp;rsquo;élitiste) tiendrait presque de la magie si je n&amp;rsquo;étais pas informaticien. 
+Sans rire, il m&amp;rsquo;a fallu 10 minutes entre le temps où j&amp;rsquo;ai entré la commande dans l&amp;rsquo;installeur d&amp;rsquo;Arch et le moment où GNOME m&amp;rsquo;a accueilli. 
+C&amp;rsquo;est stupéfiant. C&amp;rsquo;est même plus rapide qu&amp;rsquo;une installation d&amp;rsquo;Ubuntu ou Fedora.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;outil, construit en Python, pose quelques questions, comme le zone temporel, le disque à utiliser et son partitionnement, le type de machine que vous souhaitez avoir entre minimal, server, desktop, et quelques autres questions que je vous laisserai le soin de découvrir (si je n&amp;rsquo;avais pas la flemme, je vous aurai mis quelques captures, veuillez excuser l&amp;rsquo;auteur).
+Et ensuite, y&amp;rsquo;a plus qu&amp;rsquo;à attendre.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/pub-zelda-III.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Parce que j&#39;ai envie.&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;10 petites minutes plus tard (qui ne m&amp;rsquo;auront pas fait devenir squelette), on a le droit à l&amp;rsquo;écran de login de GNOME et surtout à un bureau propre et épuré, sans aucun ajout superflu. Bien sûr il manque un tas de choses, mais c&amp;rsquo;est à vous d&amp;rsquo;apporter les paquets, grâce au célèbre &lt;code&gt;pacman&lt;/code&gt;, mais également à &lt;a href=&#34;https://aur.archlinux.org&#34;&gt;AUR`&lt;/a&gt; permettant d&amp;rsquo;obtenir ainsi une bibliothèque quasiment illimité (attention quand même, ce sont des paquets communautaires, ne provenant pas de l&amp;rsquo;équipe derrière Archlinux, à vos chats, risques et périls).&lt;/p&gt;
+&lt;p&gt;On peut se construire un environnement sur-mesure, sans avoir de logiciels ou de dépendances inutiles. Pour ma part, il a été facile de retrouver mes logiciels favoris, dont le Visual Studio Code que j&amp;rsquo;affectionne tant et dans lequel j&amp;rsquo;ai écrit ce billet. 
+Oui, je sais, vous êtes en train de vous étrangler, cet exemple est valable uniquement dans le cadre de ce billet.
+Il est marrant de voir que c&amp;rsquo;est un logiciel Microsoft que j&amp;rsquo;installe en premier sur un Linux. Tout comme Edge d&amp;rsquo;ailleurs. Naaaan, je déconne.&lt;/p&gt;
+&lt;p&gt;En vrai, la situation a vraiment changé en 10 ans, époque à laquelle j&amp;rsquo;animais &lt;a href=&#34;https://enfluxlibre.lepodcast.fr&#34;&gt;une émission sur le logiciel libre&lt;/a&gt;&amp;hellip; Ce temps semble désormais totalement révolu.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.glarose.fr/img/steve-ballmer-microsoft-offers-best-both-worlds-windows-8.jpg&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;VF = Coucou Steve ! Version j&#39;en n&#39;ai rien péter = Coucou connard !&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Mais je crois que ce qui m&amp;rsquo;avait tant manqué sous Windows, c&amp;rsquo;est la personnalisation. Je peux avoir un environnement de bureau utilisant les codes de couleur que l&amp;rsquo;on appelle &lt;a href=&#34;https://nordtheme.com&#34;&gt;Nord&lt;/a&gt; permettant d&amp;rsquo;avoir une ambiance sombre et bleuté, très en vogue en ce moment et surtout, agréable à l&amp;rsquo;oeil.&lt;/p&gt;
+&lt;p&gt;Alors, désormais qu&amp;rsquo;Arch est revenu sur une machine chez moi, quel bilan en tirer ?
+Pour le moment, je redécouvre. J&amp;rsquo;aurai plus de recul dans 1 mois, et surtout, un retour complet en utilisation dans le cadre du travail.&lt;/p&gt;
+&lt;p&gt;Je crains, comme il y a 7 ans, les &lt;code&gt;pacman -Syu&lt;/code&gt; qui casserait tout le système, mais je suis bien moins casse-cou qu&amp;rsquo;à l&amp;rsquo;époque. Surtout, je remarque que l&amp;rsquo;envie d&amp;rsquo;aller voir ailleurs se fait moins en moins pressant. Le distro-hopping que je ne fais plus depuis des années y joue pour beaucoup. La volonté d&amp;rsquo;avoir une machine de prod fonctionnel, et le fait que Windows, ça ne se bidouille pas, auront eu raison de mon impatience de l&amp;rsquo;époque.&lt;/p&gt;
+&lt;p&gt;Et j&amp;rsquo;aime à me rassurer (oui, j&amp;rsquo;ai toujours eu un problème d&amp;rsquo;aimer Linux, alors je me rassure^^) en me disant que Windows est toujours installé sur ma bécane principale et qu&amp;rsquo;il est hors de question de la passer sous Linux.
+Le pragmatisme est une bonne conseillière&amp;hellip;
+Non, la multiplicité des OS, c&amp;rsquo;est aussi avoir la curiosité, sans prosélytisme, de faire ce que j&amp;rsquo;ai envie.&lt;/p&gt;
+&lt;p&gt;Le fait d&amp;rsquo;avoier Linux, c&amp;rsquo;est aussi une manière pour moi de reboucler mon histoire avec le pingouin, et surtout, de commencer ma transition vers l&amp;rsquo;ops (coucou &lt;a href=&#34;https://www.wescale.fr&#34;&gt;WeScale&lt;/a&gt; !).&lt;/p&gt;
+&lt;p&gt;En attendant, un jour, de partir sur Mac :)&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Naaan, je déconne.&lt;/p&gt;
+&lt;p&gt;Quoique.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Redscape&lt;/em&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
