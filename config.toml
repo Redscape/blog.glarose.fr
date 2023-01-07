@@ -1,5 +1,5 @@
 baseurl = "https://blog.glarose.fr"
-languageCode = "en-us"
+languageCode = "fr-fr"
 theme = "hugo-theme-terminal"
 paginate = 5
 
