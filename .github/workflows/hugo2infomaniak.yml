@@ -30,8 +30,7 @@ jobs:
       - name: SFTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@3.1.2
         with:
-          host: ${{ secrets.FTP_SERVER }}${{ secrets.PATH_PROJECT }}
-          user: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          ftp-server: ${{ secrets.FTP_SERVER }}${{ secrets.PATH_PROJECT }}
+          ftp-username: ${{ secrets.FTP_USER }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/
-          forceSsl: true
