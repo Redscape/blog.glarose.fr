@@ -1,0 +1,66 @@
+baseurl = "https://blog.glarose.fr"
+languageCode = "en-us"
+theme = "hugo-theme-terminal"
+paginate = 5
+
+[params]
+  contentTypeName = "posts"
+  themeColor = "red"
+  showMenuItems = 6
+  fullWidthTheme = false
+  centerTheme = true
+  favicon = "/img/favicon/favicon_blog.png"
+  [params.twitter]
+  # set Twitter handles for Twitter cards
+  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
+  # do not include @
+  creator = "Redscape"
+  site = "https://twitter.com/redscape_music"
+
+[languages]
+  [languages.en]
+    title = "RDSCP Blog"
+    subtitle = "Tech, Idées, Pensées."
+    keywords = ""
+    copyright = "©2022 Gh15L1"
+    menuMore = "Voir plus"
+    readMore = "Lire plus"
+    readOtherPosts = "Lire d'autres posts"
+
+    [languages.en.params.logo]
+      logoText = "Redscape blog"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "a-propos"
+        name = "A Propos"
+        url = "/a-propos"
+      [[languages.en.menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/contact"
+      [[languages.en.menu.main]]
+        identifier = "podcasts"
+        name = "Podcasts"
+        url = "/podcasts"
+      [[languages.en.menu.main]]
+        identifier = "gitlab"
+        name = "Gitlab"
+        url = "https://gitlab.com/redscapedev"
+      [[languages.en.menu.main]]
+        identifier = "twitter"
+        name = "Twitter"
+        url = "https://twitter.com/redscape_tech"
+      [[languages.en.menu.main]]
+        identifier = "aspacemr"
+        name = "ASpaceMR"
+        url = "https://aspacemr.fr"
+      [[languages.en.menu.main]]
+        identifier = "lesabyssales"
+        name = "Les Abyssales"
+        url = "https://lesabyssales.redscapemusic.com"
+      
+      
+
+        
